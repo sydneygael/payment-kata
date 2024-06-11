@@ -2,6 +2,7 @@ package org.kata.payment.application.services;
 
 import org.kata.payment.application.ports.input.ManagePayment;
 import org.kata.payment.application.ports.output.Payments;
+import org.kata.payment.application.services.exception.PaymentNotFoundException;
 import org.kata.payment.domain.aggregat.Payment;
 import org.kata.payment.domain.valueobject.PaymentId;
 

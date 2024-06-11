@@ -4,8 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="feat(application): create the appplication layer + unit tests">
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/aggregat/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/aggregat/Payment.java" afterDir="false" />
+    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="chore(application): fix some sonar">
+      <change afterPath="$PROJECT_DIR$/infrastructure/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/PaymentApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/rest/PaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/entity/ItemEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/entity/PaymentEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/config/BeanConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/config/DatabaseConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/config/H2DatabaseConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/64178e4df5f3c8f704a048a92588ee791ad61c56" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/64178e4df5f3c8f704a048a92588ee791ad61c56" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/PaymentApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/PaymentApplicationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/PaymentNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/exception/PaymentNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +34,8 @@
       <list>
         <option value="Record" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -56,6 +73,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.kata.payment.infrastructure.adapters.outbound.persistence.entity" />
       <recent name="org.kata.payment.application.services" />
       <recent name="org.kata.payment.domain.valueobject" />
       <recent name="org.kata.onepay.domain" />
@@ -78,7 +96,7 @@
       <module name="application" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.kata.payment.application.services.*" />
+          <option name="PATTERN" value="org.kata.payment.application.services.exception.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -176,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718146283429</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="chore(application): fix some sonar">
+      <option name="closed" value="true" />
+      <created>1718146460007</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1718146460007</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -187,15 +213,21 @@
     <MESSAGE value="feat(tdd): init project + nominal test cases" />
     <MESSAGE value="refactor: It is not possible to change the purchase order when the transaction is modified." />
     <MESSAGE value="feat(application): create the appplication layer + unit tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(application): create the appplication layer + unit tests" />
+    <MESSAGE value="chore(application): fix some sonar" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore(application): fix some sonar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/PaymentApplicationService.java</url>
-          <line>22</line>
+          <line>23</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/config/BeanConfiguration.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
