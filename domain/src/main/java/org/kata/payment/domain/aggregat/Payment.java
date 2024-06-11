@@ -28,6 +28,7 @@ public class Payment {
     @Getter
     @Setter
     private PaymentState state;
+    @Getter
     @Setter
     private List<Item> items;
     @Setter

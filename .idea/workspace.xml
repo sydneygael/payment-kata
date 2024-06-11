@@ -4,12 +4,86 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="feat(tdd): init project + nominal test cases">
+    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="refactor: It is not possible to change the purchase order when the transaction is modified.">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/e/0e745a3197d66f9b5b88e3c4adba1cf44ae152b8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/4/14f59ef49cfd26235d7b975b43f33d2b35d1a688" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/18da4d21185741ec94141b85bca8ecc06fe92b5f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2cabb939da04d3de3a200bf2b575690e1a16316d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/1/41e6053dc0b85e44a08f61076c4a234885630392" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/455852b4f4fcf56615721ef9b606b4e2f4640f77" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/2/52ef96652605ac942c5ff89ad2cfad0c876e2f70" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/6/566367bde7a40353f3de405a5a90ae363e38c9cf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/7219df89a04fca5d2e6f7f86cedfaca4bd6c43bf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/73181c0fb2713482ee097c073781c46bb6cab0ff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/c/7cd3d6e37c24002ce8c752e23366557481d6b9a3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/6/863e0292fd7e9b3e74dafd6cc01f73ba76346482" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/9/8980d9872ba7f783249a385ce44307683ffdd92c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/92641b00a169883913b81f63ca726c11952a196c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/4/94f62c6ad57c447449a6df1ce632f3b47d75725c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/6/9629624b3acea4748abd226c76cd89f4d9854c93" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a31b94cce478ed80474757dd79ffafe7f28a909b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a321fb2b99b3362ff14a03922f87b6da2a922059" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/5/a5cc2925ca8258af241be7e5b0381edf30266302" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/c/ac57aec6a10d8cca142c25676e9368df758f6cc6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/8/c8e09e04d708c7173c1ba2685d2316cc2ad28f74" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d56131b384ca12a9b220bea2019d83fd10a7005a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d611957d04c45a2e2a1aa442b24e735f69147b3f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/dbe6ac17c41bde278c95019c3120c3d315851f91" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/0/e07e57b387eac2edf0db893832ef14e6dec98784" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e6d08481ab2a0abaf2aea92d96c4a2b0e50617b9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/8/e8fe203e49095ccfac3082fcc44e97fea73b800e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f0beecb3fabf37dd9436f6a769abf826f97eba92" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/2/f2cad4791fddebec0e41006f49d474204a0e6585" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f3203c97be2347d4dcf596e968d5f59e586a2b71" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/4/f451ab740171fcd4855c03af1d425b2c3be470e7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/e/0e745a3197d66f9b5b88e3c4adba1cf44ae152b8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/4/14f59ef49cfd26235d7b975b43f33d2b35d1a688" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/8/18da4d21185741ec94141b85bca8ecc06fe92b5f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/c/2cabb939da04d3de3a200bf2b575690e1a16316d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/1/41e6053dc0b85e44a08f61076c4a234885630392" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/5/455852b4f4fcf56615721ef9b606b4e2f4640f77" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/2/52ef96652605ac942c5ff89ad2cfad0c876e2f70" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/6/566367bde7a40353f3de405a5a90ae363e38c9cf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/2/7219df89a04fca5d2e6f7f86cedfaca4bd6c43bf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/3/73181c0fb2713482ee097c073781c46bb6cab0ff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/c/7cd3d6e37c24002ce8c752e23366557481d6b9a3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/6/863e0292fd7e9b3e74dafd6cc01f73ba76346482" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/9/8980d9872ba7f783249a385ce44307683ffdd92c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/2/92641b00a169883913b81f63ca726c11952a196c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/4/94f62c6ad57c447449a6df1ce632f3b47d75725c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/6/9629624b3acea4748abd226c76cd89f4d9854c93" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/3/a31b94cce478ed80474757dd79ffafe7f28a909b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/3/a321fb2b99b3362ff14a03922f87b6da2a922059" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/5/a5cc2925ca8258af241be7e5b0381edf30266302" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/c/ac57aec6a10d8cca142c25676e9368df758f6cc6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/8/c8e09e04d708c7173c1ba2685d2316cc2ad28f74" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/5/d56131b384ca12a9b220bea2019d83fd10a7005a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/6/d611957d04c45a2e2a1aa442b24e735f69147b3f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/b/dbe6ac17c41bde278c95019c3120c3d315851f91" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/0/e07e57b387eac2edf0db893832ef14e6dec98784" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/6/e6d08481ab2a0abaf2aea92d96c4a2b0e50617b9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/8/e8fe203e49095ccfac3082fcc44e97fea73b800e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/0/f0beecb3fabf37dd9436f6a769abf826f97eba92" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/2/f2cad4791fddebec0e41006f49d474204a0e6585" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/3/f3203c97be2347d4dcf596e968d5f59e586a2b71" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/4/f451ab740171fcd4855c03af1d425b2c3be470e7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/ports/input/ManagePayment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/ports/output/Payments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/PaymentApplicationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/PaymentNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/UseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/test/java/org/kata/payment/application/services/PaymentApplicationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/aggregat/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/aggregat/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/CapturedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/CapturedState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/NewState.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/NewState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/test/java/org/kata/payment/domain/PaymentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/org/kata/payment/domain/PaymentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +96,7 @@
         <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -36,26 +111,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.PaymentTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TransactionTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sydne/IdeaProjects/onepay-kata&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.PaymentApplicationServiceTest.executor": "Run",
+    "JUnit.PaymentTest.executor": "Coverage",
+    "JUnit.TransactionTest.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/dev/git/spring-boot-hexagonal-architecture-main",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.kata.payment.application.services" />
       <recent name="org.kata.payment.domain.valueobject" />
       <recent name="org.kata.onepay.domain" />
     </key>
@@ -65,8 +144,29 @@
     <key name="CreateBuilderDialog.RecentsKey">
       <recent name="org.kata.payment.domain.aggregat" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.kata.payment.application.services" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.PaymentApplicationServiceTest">
+    <configuration name="PaymentApplicationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.kata.payment.application.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.kata.payment.application.services" />
+      <option name="MAIN_CLASS_NAME" value="org.kata.payment.application.services.PaymentApplicationServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PaymentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="domain" />
       <extension name="coverage">
@@ -84,6 +184,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PaymentApplicationServiceTest" />
         <item itemvalue="JUnit.PaymentTest" />
       </list>
     </recent_temporary>
@@ -137,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718138029324</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refactor: It is not possible to change the purchase order when the transaction is modified.">
+      <option name="closed" value="true" />
+      <created>1718140150733</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1718140150733</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -146,6 +255,23 @@
     <MESSAGE value="feat(tdd): A newly created `Transaction` must be in the status `NEW`." />
     <MESSAGE value="feat(tdd): It is only possible to change the transaction status to `CAPTURED` when the transaction is currently in status `AUTHORIZED`." />
     <MESSAGE value="feat(tdd): init project + nominal test cases" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(tdd): init project + nominal test cases" />
+    <MESSAGE value="refactor: It is not possible to change the purchase order when the transaction is modified." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: It is not possible to change the purchase order when the transaction is modified." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/PaymentApplicationService.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/onepay_kata$PaymentTest.ic" NAME="PaymentTest Coverage Results" MODIFIED="1718140232235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>org.kata.payment.domain.*</FILTER>
+    </SUITE>
   </component>
 </project>
