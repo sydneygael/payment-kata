@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="feat(tdd): It is only possible to change the transaction status to `CAPTURED` when the transaction is currently in status `AUTHORIZED`.">
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/onepay/domain/state/NewState.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/onepay/domain/state/NewState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/onepay/domain/state/TransactionState.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/onepay/domain/state/TransactionState.java" afterDir="false" />
+    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="feat(tdd): init project + nominal test cases">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/aggregat/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/aggregat/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/CapturedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/CapturedState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/NewState.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/NewState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/test/java/org/kata/payment/domain/PaymentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/org/kata/payment/domain/PaymentTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,24 +36,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.PaymentTest.executor": "Run",
-    "JUnit.TransactionTest.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/sydne/IdeaProjects/onepay-kata",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.PaymentTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TransactionTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sydne/IdeaProjects/onepay-kata&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.kata.payment.domain.valueobject" />
@@ -58,6 +61,9 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sydne\IdeaProjects\onepay-kata" />
+    </key>
+    <key name="CreateBuilderDialog.RecentsKey">
+      <recent name="org.kata.payment.domain.aggregat" />
     </key>
   </component>
   <component name="RunManager">
@@ -123,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718128111754</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat(tdd): init project + nominal test cases">
+      <option name="closed" value="true" />
+      <created>1718138029324</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1718138029324</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -131,6 +145,7 @@
     <MESSAGE value="chore(.idea): remove idea from gitignore" />
     <MESSAGE value="feat(tdd): A newly created `Transaction` must be in the status `NEW`." />
     <MESSAGE value="feat(tdd): It is only possible to change the transaction status to `CAPTURED` when the transaction is currently in status `AUTHORIZED`." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(tdd): It is only possible to change the transaction status to `CAPTURED` when the transaction is currently in status `AUTHORIZED`." />
+    <MESSAGE value="feat(tdd): init project + nominal test cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(tdd): init project + nominal test cases" />
   </component>
 </project>

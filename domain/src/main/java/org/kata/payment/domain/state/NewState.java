@@ -9,7 +9,7 @@ public class NewState implements PaymentState {
     @Override
     public void authorized(Payment payment) {
         payment.setState(new AuthorizedState());
-        log.info("Payment {} authorized", payment.getId());
+        log.debug("Payment {} authorized", payment.getId());
     }
 
     @Override
@@ -20,7 +20,7 @@ public class NewState implements PaymentState {
     @Override
     public void canceled(Payment payment) {
         payment.setState(new CanceledState());
-        log.info("Payment {} canceled", payment.getId());
+        log.debug("Payment {} canceled", payment.getId());
     }
 
     @Override

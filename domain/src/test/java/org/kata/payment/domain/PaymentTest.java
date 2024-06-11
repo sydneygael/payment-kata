@@ -10,6 +10,7 @@ import org.kata.payment.domain.valueobject.Item;
 import org.kata.payment.domain.valueobject.Money;
 import org.kata.payment.domain.valueobject.PaymentId;
 
+import java.util.ArrayList;
 import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -41,7 +42,7 @@ class PaymentTest {
 
     @Test
     void testChangeToCapturedWhenNotAuthorized() {
-        Payment payment = Payment.builder()
+        var payment = Payment.builder()
                 .id(new PaymentId())
                 .paymentType(Payment.PaymentType.CREDIT_CARD)
                 .items(Collections.emptyList())
@@ -52,7 +53,7 @@ class PaymentTest {
 
     @Test
     void testChangeToCanceledWhenNotCaptured() {
-        Payment payment = Payment.builder()
+        var payment = Payment.builder()
                 .id(new PaymentId())
                 .paymentType(Payment.PaymentType.CREDIT_CARD)
                 .items(Collections.emptyList())
@@ -64,7 +65,7 @@ class PaymentTest {
 
     @Test
     void testChangeToCanceledWhenCaptured() {
-        Payment payment = Payment.builder()
+        var payment = Payment.builder()
                 .id(new PaymentId())
                 .paymentType(Payment.PaymentType.CREDIT_CARD)
                 .items(Collections.emptyList())
@@ -75,7 +76,7 @@ class PaymentTest {
 
     @Test
     void testChangeToCanceledWhenCanceled() {
-        Payment payment = Payment.builder()
+        var payment = Payment.builder()
                 .id(new PaymentId())
                 .paymentType(Payment.PaymentType.CREDIT_CARD)
                 .items(Collections.emptyList())
@@ -85,19 +86,19 @@ class PaymentTest {
     }
 
     @Test
-    void testChangePurchaseOrderWhenModified() {
-        Payment payment = Payment.builder()
+    void testShouldNotChangePurchaseOrderWhenModified() {
+        var payment = Payment.builder()
                 .id(new PaymentId())
                 .paymentType(Payment.PaymentType.CREDIT_CARD)
-                .items(Collections.emptyList())
+                .items(new ArrayList<>())
                 .state(new NewState())
                 .build();
 
-        // Simulate modifying the transaction (e.g., adding or removing items)
-        payment.getItems().add(new Item("item", new Money(10.0), 1));
+        // WHEN
+        payment.authorize();
 
-        // Attempt to change the purchase order
-        assertThrows(IllegalStateException.class, payment::authorize);
+        // THEN
+        assertThrows(IllegalStateException.class, () -> payment.addItem(new Item("item", new Money(10.0), 1)));
     }
 
 }
