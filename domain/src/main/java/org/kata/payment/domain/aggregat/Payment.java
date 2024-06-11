@@ -17,21 +17,17 @@ import java.util.List;
 
 @EqualsAndHashCode
 @NoArgsConstructor
+@Setter
 public class Payment {
 
     @Getter
-    @Setter
     private PaymentId id;
     @Getter
-    @Setter
     private PaymentType paymentType;
     @Getter
-    @Setter
     private PaymentState state;
     @Getter
-    @Setter
     private List<Item> items;
-    @Setter
     private boolean stateModified;
 
     public void authorize() {
