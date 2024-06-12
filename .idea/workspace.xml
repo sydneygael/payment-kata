@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="docs(api): add Swagger OpenAPI documentation for PaymentController">
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/rest/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/rest/PaymentController.java" afterDir="false" />
+    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="chore(payment-controller): lint">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/PaymentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/PaymentApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/payments/PaymentsInMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/payments/PaymentsInMemory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/payments/PaymentsJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/payments/PaymentsJpa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/configuration/DatabaseConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/configuration/DatabaseConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +40,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.PaymentApplication.executor": "Run",
     "JUnit.PaymentApplicationServiceTest.executor": "Run",
     "JUnit.PaymentControllerTest.executor": "Run",
     "JUnit.PaymentTest.executor": "Coverage",
@@ -81,7 +87,20 @@
       <recent name="org.kata.payment.application.services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PaymentControllerTest">
+  <component name="RunManager" selected="Application.PaymentApplication">
+    <configuration name="PaymentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.kata.payment.infrastructure.PaymentApplication" />
+      <module name="infrastructure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.kata.payment.infrastructure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PaymentApplicationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="application" />
       <extension name="coverage">
@@ -107,21 +126,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.kata.payment.infrastructure.adapters.inbound.rest" />
       <option name="MAIN_CLASS_NAME" value="org.kata.payment.infrastructure.adapters.inbound.rest.PaymentControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PaymentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="domain" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.kata.payment.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.kata.payment.domain" />
-      <option name="MAIN_CLASS_NAME" value="org.kata.payment.domain.PaymentTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -159,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PaymentApplication" />
         <item itemvalue="JUnit.PaymentControllerTest" />
         <item itemvalue="JUnit.PaymentsJpaTest" />
         <item itemvalue="JUnit.PaymentsInMemoryTest" />
         <item itemvalue="JUnit.PaymentApplicationServiceTest" />
-        <item itemvalue="JUnit.PaymentTest" />
       </list>
     </recent_temporary>
   </component>
@@ -304,7 +308,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718227277653</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="chore(payment-controller): lint">
+      <option name="closed" value="true" />
+      <created>1718227365265</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1718227365265</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -324,7 +336,8 @@
     <MESSAGE value="chore(sonar): fix some warnings on PaymentControllerAdvice.java" />
     <MESSAGE value="test(payment-controller): add basic tests for payment creation, modification, and retrieval" />
     <MESSAGE value="docs(api): add Swagger OpenAPI documentation for PaymentController" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(api): add Swagger OpenAPI documentation for PaymentController" />
+    <MESSAGE value="chore(payment-controller): lint" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore(payment-controller): lint" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

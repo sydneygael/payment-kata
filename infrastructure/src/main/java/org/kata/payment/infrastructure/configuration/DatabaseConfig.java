@@ -9,9 +9,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 
 @Configuration
-public final class DatabaseConfig {
-
-    private DatabaseConfig() {}
+public class DatabaseConfig {
 
     @Configuration
     @EnableConfigurationProperties(H2DatabaseConfig.class)

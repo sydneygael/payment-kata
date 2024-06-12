@@ -4,12 +4,11 @@ import org.kata.payment.application.ports.output.Payments;
 import org.kata.payment.domain.aggregat.Payment;
 import org.kata.payment.infrastructure.adapters.outbound.persistence.entity.PaymentEntity;
 import org.kata.payment.infrastructure.adapters.outbound.persistence.repository.PaymentRepository;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
-@Component
+
 public class PaymentsJpa implements Payments {
 
     private final PaymentRepository paymentRepository;
