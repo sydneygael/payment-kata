@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.kata.payment.domain.aggregat.Payment;
 import org.kata.payment.domain.valueobject.PaymentId;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
@@ -16,6 +17,9 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 public class PaymentEntity implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 5747736168032629998L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
