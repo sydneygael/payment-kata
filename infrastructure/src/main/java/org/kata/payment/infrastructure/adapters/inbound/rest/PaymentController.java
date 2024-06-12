@@ -13,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/payments")
@@ -28,14 +27,17 @@ public class PaymentController {
 
     @PostMapping
     @Operation(summary = "Create a new payment")
-    public ResponseEntity<PaymentResponse> createPayment(@RequestBody PaymentRequest paymentRequest) {
+    public ResponseEntity<PaymentResponse> createPayment(
+            @RequestBody PaymentRequest paymentRequest) {
         var createdPayment = managePayment.createPayment(paymentRequest.toDomain());
         return ResponseEntity.ok(PaymentResponse.fromDomain(createdPayment));
     }
 
     @GetMapping("/{id}")
     @Operation(summary = "Get a payment by ID")
-    public ResponseEntity<PaymentResponse> getPayment(@Parameter(description = "ID of the payment to be retrieved") @PathVariable String id) throws PaymentNotFoundException {
+    public ResponseEntity<PaymentResponse> getPayment(
+            @Parameter(description = "ID of the payment to be retrieved")
+            @PathVariable String id) throws PaymentNotFoundException {
         var payment = managePayment.readingPayment(new PaymentId(id));
         return ResponseEntity.ok(PaymentResponse.fromDomain(payment));
     }
@@ -43,7 +45,8 @@ public class PaymentController {
     @PutMapping("/{id}")
     @Operation(summary = "Update an existing payment")
     public ResponseEntity<PaymentResponse> updatePayment(
-            @Parameter(description = "ID of the payment to be updated") @PathVariable("id") String id,
+            @Parameter(description = "ID of the payment to be updated")
+            @PathVariable("id") String id,
             @RequestBody PaymentRequest paymentRequest) throws PaymentNotFoundException {
         var payment = paymentRequest.toDomain();
         payment.setId(new PaymentId(id));
