@@ -6,6 +6,8 @@ import org.kata.payment.application.services.exception.PaymentNotFoundException;
 import org.kata.payment.domain.aggregat.Payment;
 import org.kata.payment.domain.valueobject.PaymentId;
 
+import java.util.List;
+
 @UseCase
 public class PaymentApplicationService implements ManagePayment {
 
@@ -21,16 +23,21 @@ public class PaymentApplicationService implements ManagePayment {
     }
 
     @Override
-    public Payment readingPayment(PaymentId paymentId) {
+    public Payment readingPayment(PaymentId paymentId) throws PaymentNotFoundException {
         return payments.findPaymentById(paymentId.id())
                 .orElseThrow(() -> new PaymentNotFoundException("Payment with ID " + paymentId.id() + " not found"));
     }
 
     @Override
-    public Payment modifyPayment(Payment payment) {
+    public Payment modifyPayment(Payment payment) throws PaymentNotFoundException {
         var existingPayment = readingPayment(payment.getId());
         existingPayment.setPaymentType(payment.getPaymentType());
         existingPayment.setItems(payment.getItems());
         return payments.save(existingPayment);
+    }
+
+    @Override
+    public List<Payment> getAllPayments() {
+        return payments.findAll();
     }
 }

@@ -4,6 +4,8 @@ import org.kata.payment.application.ports.output.Payments;
 import org.kata.payment.domain.aggregat.Payment;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
@@ -22,5 +24,10 @@ public class PaymentsInMemory implements Payments {
     @Override
     public Optional<Payment> findPaymentById(String id) {
         return Optional.ofNullable(paymentStorage.get(id));
+    }
+
+    @Override
+    public List<Payment> findAll() {
+        return new ArrayList<>(paymentStorage.values());
     }
 }

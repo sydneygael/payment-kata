@@ -6,6 +6,7 @@ import org.kata.payment.infrastructure.adapters.outbound.persistence.entity.Paym
 import org.kata.payment.infrastructure.adapters.outbound.persistence.repository.PaymentRepository;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -27,5 +28,12 @@ public class PaymentsJpa implements Payments {
     @Override
     public Optional<Payment> findPaymentById(String id) {
         return paymentRepository.findById(Long.valueOf(id)).map(PaymentEntity::toDomain);
+    }
+
+    @Override
+    public List<Payment> findAll() {
+        return paymentRepository.findAll().stream()
+                .map(PaymentEntity::toDomain)
+                .toList();
     }
 }
