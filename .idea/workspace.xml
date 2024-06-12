@@ -4,25 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="chore(application): fix some sonar">
-      <change afterPath="$PROJECT_DIR$/infrastructure/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/PaymentApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/rest/PaymentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/entity/ItemEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/entity/PaymentEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/config/BeanConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/config/DatabaseConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/config/H2DatabaseConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/64178e4df5f3c8f704a048a92588ee791ad61c56" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/64178e4df5f3c8f704a048a92588ee791ad61c56" afterDir="false" />
+    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="feat(database): add database adapters for Payment entity">
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/payments/PaymentsInMemory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/payments/PaymentsJpa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/repository/PaymentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/configuration/H2DatabaseConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/configuration/PostgresDatabaseConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/org/kata/payment/infrastructure/adapters/outbound/persistence/payments/PaymentsInMemoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/org/kata/payment/infrastructure/adapters/outbound/persistence/payments/PaymentsJpaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/e/0e745a3197d66f9b5b88e3c4adba1cf44ae152b8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/2/52ef96652605ac942c5ff89ad2cfad0c876e2f70" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/e/0e745a3197d66f9b5b88e3c4adba1cf44ae152b8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/2/52ef96652605ac942c5ff89ad2cfad0c876e2f70" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/PaymentApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/PaymentApplicationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/PaymentNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/exception/PaymentNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/aggregat/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/aggregat/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/entity/ItemEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/entity/ItemEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/entity/PaymentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/entity/PaymentEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/config/BeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/configuration/BeanConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/config/DatabaseConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/configuration/DatabaseConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/config/H2DatabaseConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +59,8 @@
   "keyToString": {
     "JUnit.PaymentApplicationServiceTest.executor": "Run",
     "JUnit.PaymentTest.executor": "Coverage",
+    "JUnit.PaymentsInMemoryTest.executor": "Run",
+    "JUnit.PaymentsJpaTest.executor": "Run",
     "JUnit.TransactionTest.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -68,7 +75,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "Errors"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -88,10 +95,11 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.kata.payment.infrastructure.adapters.outbound.persistence.payments" />
       <recent name="org.kata.payment.application.services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PaymentApplicationServiceTest">
+  <component name="RunManager" selected="JUnit.PaymentsJpaTest">
     <configuration name="PaymentApplicationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="application" />
       <extension name="coverage">
@@ -122,8 +130,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PaymentsInMemoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="infrastructure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.kata.payment.infrastructure.adapters.outbound.persistence.payments.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.kata.payment.infrastructure.adapters.outbound.persistence.payments" />
+      <option name="MAIN_CLASS_NAME" value="org.kata.payment.infrastructure.adapters.outbound.persistence.payments.PaymentsInMemoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentsJpaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="infrastructure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.kata.payment.infrastructure.adapters.outbound.persistence.payments.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.kata.payment.infrastructure.adapters.outbound.persistence.payments" />
+      <option name="MAIN_CLASS_NAME" value="org.kata.payment.infrastructure.adapters.outbound.persistence.payments.PaymentsJpaTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PaymentsJpaTest" />
+        <item itemvalue="JUnit.PaymentsInMemoryTest" />
         <item itemvalue="JUnit.PaymentApplicationServiceTest" />
         <item itemvalue="JUnit.PaymentTest" />
       </list>
@@ -202,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718146460007</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="wip(infra): start configuring beans + adapters">
+      <option name="closed" value="true" />
+      <created>1718150222290</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718150222290</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -214,18 +262,20 @@
     <MESSAGE value="refactor: It is not possible to change the purchase order when the transaction is modified." />
     <MESSAGE value="feat(application): create the appplication layer + unit tests" />
     <MESSAGE value="chore(application): fix some sonar" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore(application): fix some sonar" />
+    <MESSAGE value="wip(infra): start configuring beans + adapters" />
+    <MESSAGE value="feat(database): add database adapters for Payment entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(database): add database adapters for Payment entity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/PaymentApplicationService.java</url>
-          <line>23</line>
+          <line>24</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/config/BeanConfiguration.java</url>
+          <url>file://$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/configuration/BeanConfiguration.java</url>
           <line>12</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>

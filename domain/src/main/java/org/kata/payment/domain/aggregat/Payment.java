@@ -29,24 +29,29 @@ public class Payment {
     @Getter
     private List<Item> items;
     private boolean stateModified;
+    @Getter
+    private PaymentStatus status = PaymentStatus.NEW;
 
     public void authorize() {
         state.authorized(this);
+        status = state.getStatus();
         stateModified = true;
     }
 
     public void capture() {
         state.captured(this);
+        status = state.getStatus();
         stateModified = true;
     }
 
     public void cancel() {
         state.canceled(this);
+        status = state.getStatus();
         stateModified = true;
     }
 
     public PaymentStatus getPaymentStatus() {
-        return state.getStatus();
+        return status;
     }
 
     public Money totalAmount() {
@@ -81,6 +86,7 @@ public class Payment {
         private PaymentType paymentType;
         private PaymentState state = new NewState();
         private List<Item> items = new ArrayList<>();
+        private PaymentStatus status = PaymentStatus.NEW;
 
         private Builder() {
         }
@@ -105,14 +111,22 @@ public class Payment {
             return this;
         }
 
+        public Builder status(PaymentStatus status) {
+            this.status = status;
+            return this;
+        }
+
         public Payment build() {
             var payment = new Payment();
             payment.setId(id);
             payment.setPaymentType(paymentType);
             payment.setState(state);
             payment.setItems(items);
+            payment.setStatus(status);
             payment.setStateModified(false); // Set stateModified to false by default
             return payment;
         }
+
+
     }
 }

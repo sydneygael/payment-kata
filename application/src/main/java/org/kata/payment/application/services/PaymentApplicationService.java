@@ -6,6 +6,7 @@ import org.kata.payment.application.services.exception.PaymentNotFoundException;
 import org.kata.payment.domain.aggregat.Payment;
 import org.kata.payment.domain.valueobject.PaymentId;
 
+@UseCase
 public class PaymentApplicationService implements ManagePayment {
 
     private final Payments payments;
@@ -28,9 +29,6 @@ public class PaymentApplicationService implements ManagePayment {
     @Override
     public Payment modifyPayment(Payment payment) {
         var existingPayment = readingPayment(payment.getId());
-
-        // Apply modifications to the existing payment
-        // For simplicity, let's assume we directly copy attributes from the provided payment
         existingPayment.setPaymentType(payment.getPaymentType());
         existingPayment.setItems(payment.getItems());
         return payments.save(existingPayment);
