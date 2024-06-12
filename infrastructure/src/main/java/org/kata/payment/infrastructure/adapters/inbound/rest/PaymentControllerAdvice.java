@@ -21,6 +21,6 @@ public class PaymentControllerAdvice {
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    public static record ErrorResponse(int status, String message) {
+    public record ErrorResponse(int status, String message) {
     }
 }
