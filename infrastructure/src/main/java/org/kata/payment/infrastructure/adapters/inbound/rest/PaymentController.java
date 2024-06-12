@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/payments")
@@ -35,7 +34,7 @@ public class PaymentController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<PaymentResponse> updatePayment(@PathVariable String id,
+    public ResponseEntity<PaymentResponse> updatePayment(@PathVariable("id") String id,
                                                          @RequestBody PaymentRequest paymentRequest) throws PaymentNotFoundException {
         var payment = paymentRequest.toDomain();
         payment.setId(new PaymentId(id));
@@ -48,7 +47,7 @@ public class PaymentController {
         List<Payment> payments = managePayment.getAllPayments();
         List<PaymentResponse> paymentResponses = payments.stream()
                 .map(PaymentResponse::fromDomain)
-                .collect(Collectors.toList());
+                .toList();
         return ResponseEntity.ok(paymentResponses);
     }
 }

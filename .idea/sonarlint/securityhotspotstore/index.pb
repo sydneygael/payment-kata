@@ -250,3 +250,5 @@ minfrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/r
 kinfrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/rest/dto/PaymentResponse.java,c\0\c0a5f7f5b85af20f52c121d6e2a1c258ec1b0f1c
 Ÿ
 oinfrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/rest/PaymentControllerAdvice.java,7\7\774eef2269fedf0ef975c4086810c7009153638c
+
+minfrastructure/src/test/java/org/kata/payment/infrastructure/adapters/inbound/rest/PaymentControllerTest.java,7\3\7302dfd370be494c11bcf68824ffb1473c28e645
