@@ -254,3 +254,5 @@ oinfrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/r
 minfrastructure/src/test/java/org/kata/payment/infrastructure/adapters/inbound/rest/PaymentControllerTest.java,7\3\7302dfd370be494c11bcf68824ffb1473c28e645
 ç
 ]infrastructure/src/main/java/org/kata/payment/infrastructure/configuration/SwaggerConfig.java,4\2\42e626b456173f02c46565136e19f78804de939f
+ç
+]infrastructure/src/main/java/org/kata/payment/infrastructure/configuration/OpenApiConfig.java,4\9\49c0e02e1ab42e053b3bcc7ac405b873ccc61948
