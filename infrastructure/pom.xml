@@ -19,10 +19,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.kata</groupId>
-            <artifactId>domain</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
@@ -67,6 +63,12 @@
             <version>3.24.2</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+
     </dependencies>
 
 </project>
