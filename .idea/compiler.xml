@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="application" />
         <module name="infrastructure" />
+        <module name="validation-test" />
         <module name="domain" />
       </profile>
     </annotationProcessing>

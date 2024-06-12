@@ -256,3 +256,13 @@ minfrastructure/src/test/java/org/kata/payment/infrastructure/adapters/inbound/r
 ]infrastructure/src/main/java/org/kata/payment/infrastructure/configuration/SwaggerConfig.java,4\2\42e626b456173f02c46565136e19f78804de939f
 ç
 ]infrastructure/src/main/java/org/kata/payment/infrastructure/configuration/OpenApiConfig.java,4\9\49c0e02e1ab42e053b3bcc7ac405b873ccc61948
+G
+validation-test/pom.xml,6\e\6e2625a3f0965a26a4854ab21306e39b81d44181
+`
+0validation-test/src/main/java/org/kata/Main.java,6\6\6693fd48a124eb1e39b78606792a9b9f9729135b
+r
+Bvalidation-test/src/main/java/org/kata/payment/validation/App.java,3\d\3d5b71000958c9f987de0ecb8274ddd0e95bc839
+~
+Nvalidation-test/src/test/java/org/kata/payment/validation/ValidationTests.java,c\d\cd3fbaf5ecd45a296703c215f2402382cee04e67
+ä
+Zvalidation-test/src/test/java/org/kata/payment/validation/CucumberSpringConfiguration.java,9\c\9cd917ce12fe6e687a3fd0dc38ca0fd922976acf
