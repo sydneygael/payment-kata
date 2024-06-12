@@ -21,7 +21,7 @@ public record PaymentRequest(
                 .build();
     }
 
-    public static record ItemRequest(String name, double price, int quantity) {
+    public record ItemRequest(String name, double price, int quantity) {
         public Item toDomain() {
             return new Item(name, new Money(price), quantity);
         }

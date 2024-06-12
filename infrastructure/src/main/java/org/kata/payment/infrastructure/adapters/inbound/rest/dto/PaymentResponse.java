@@ -21,7 +21,7 @@ public record PaymentResponse(
     }
 
 
-    public static record ItemResponse(String name, double price, int quantity) {
+    public record ItemResponse(String name, double price, int quantity) {
         public static ItemResponse fromDomain(Item item) {
             return new ItemResponse(item.name(), item.price().amount(), item.quantity());
         }

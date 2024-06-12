@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="refactor(project): fix some warning">
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/rest/PaymentControllerAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/rest/dto/PaymentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/rest/dto/PaymentResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/ports/input/ManagePayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/ports/input/ManagePayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/ports/output/Payments.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/ports/output/Payments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/PaymentApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/PaymentApplicationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/rest/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/rest/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/payments/PaymentsJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/payments/PaymentsJpa.java" afterDir="false" />
-    </list>
+    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="feat(payments): create payment rest endpoints" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -256,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718213521237</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat(payments): create payment rest endpoints">
+      <option name="closed" value="true" />
+      <created>1718222702108</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718222702108</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -271,7 +267,8 @@
     <MESSAGE value="wip(infra): start configuring beans + adapters" />
     <MESSAGE value="feat(database): add database adapters for Payment entity" />
     <MESSAGE value="refactor(project): fix some warning" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(project): fix some warning" />
+    <MESSAGE value="feat(payments): create payment rest endpoints" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(payments): create payment rest endpoints" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
