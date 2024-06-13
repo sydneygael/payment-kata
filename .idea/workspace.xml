@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="fix(doc): open api doc">
-      <change afterPath="$PROJECT_DIR$/validation-test/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/validation/CucumberSpringConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/validation/ValidationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="wip(validation-tests): create runner class">
+      <change afterPath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/features/ValidationTestsRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/features/steps/PaymentSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validation-test/src/test/resources/features/payment.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validation-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/validation-test/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/validation/CucumberSpringConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/features/configuration/CucumberSpringConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/validation/ValidationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,30 +41,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.PaymentApplication.executor": "Run",
-    "JUnit.PaymentApplicationServiceTest.executor": "Run",
-    "JUnit.PaymentControllerTest.executor": "Run",
-    "JUnit.PaymentTest.executor": "Coverage",
-    "JUnit.PaymentsInMemoryTest.executor": "Run",
-    "JUnit.PaymentsJpaTest.executor": "Run",
-    "JUnit.TransactionTest.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/dev/git/spring-boot-hexagonal-architecture-main",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Errors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.PaymentApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: payment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentApplicationServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.PaymentsInMemoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentsJpaTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TransactionTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ValidationTestsRunner.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ValidationTestsRunner.objectMapper.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/dev/git/spring-boot-hexagonal-architecture-main&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.kata.payment.infrastructure.adapters.outbound.persistence.entity" />
@@ -82,6 +85,7 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.kata.payment.steps" />
       <recent name="org.kata.payment.infrastructure.adapters.inbound.rest" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
@@ -91,7 +95,7 @@
       <recent name="org.kata.payment.application.services" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PaymentApplication">
+  <component name="RunManager" selected="Cucumber Java.Feature: payment">
     <configuration name="PaymentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.kata.payment.infrastructure.PaymentApplication" />
       <module name="infrastructure" />
@@ -105,17 +109,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaymentApplicationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="application" />
+    <configuration name="Feature: payment" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/validation-test/src/test/resources/features/payment.feature" />
+      <option name="GLUE" value="org.kata.payment.steps org.kata.payment.validation" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="validation-test" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: payment" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.kata.payment.application.services.exception.*" />
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.kata.payment.application.services" />
-      <option name="MAIN_CLASS_NAME" value="org.kata.payment.application.services.PaymentApplicationServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -135,43 +143,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaymentsInMemoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="infrastructure" />
+    <configuration name="ValidationTestsRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="validation-test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.kata.payment.infrastructure.adapters.outbound.persistence.payments.*" />
+          <option name="PATTERN" value="org.kata.payment.features.configuration.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.kata.payment.infrastructure.adapters.outbound.persistence.payments" />
-      <option name="MAIN_CLASS_NAME" value="org.kata.payment.infrastructure.adapters.outbound.persistence.payments.PaymentsInMemoryTest" />
+      <option name="PACKAGE_NAME" value="org.kata.payment.features" />
+      <option name="MAIN_CLASS_NAME" value="org.kata.payment.features.ValidationTestsRunner" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaymentsJpaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="infrastructure" />
+    <configuration name="ValidationTestsRunner.objectMapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="validation-test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.kata.payment.infrastructure.adapters.outbound.persistence.payments.*" />
+          <option name="PATTERN" value="org.kata.payment.features.configuration.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.kata.payment.infrastructure.adapters.outbound.persistence.payments" />
-      <option name="MAIN_CLASS_NAME" value="org.kata.payment.infrastructure.adapters.outbound.persistence.payments.PaymentsJpaTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="org.kata.payment.features" />
+      <option name="MAIN_CLASS_NAME" value="org.kata.payment.features.ValidationTestsRunner" />
+      <option name="METHOD_NAME" value="objectMapper" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Feature: payment" />
+        <item itemvalue="JUnit.ValidationTestsRunner" />
+        <item itemvalue="JUnit.ValidationTestsRunner.objectMapper" />
         <item itemvalue="Application.PaymentApplication" />
         <item itemvalue="JUnit.PaymentControllerTest" />
-        <item itemvalue="JUnit.PaymentsJpaTest" />
-        <item itemvalue="JUnit.PaymentsInMemoryTest" />
-        <item itemvalue="JUnit.PaymentApplicationServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -344,7 +353,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718232422710</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="chore(validation-test): init validation test module">
+      <option name="closed" value="true" />
+      <created>1718233060607</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1718233060607</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -378,7 +395,9 @@
     <MESSAGE value="chore(payment-controller): lint" />
     <MESSAGE value="fix(bean-config): basic springboot launcher" />
     <MESSAGE value="fix(doc): open api doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(doc): open api doc" />
+    <MESSAGE value="chore(validation-test): init validation test module" />
+    <MESSAGE value="wip(validation-tests): create runner class" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip(validation-tests): create runner class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

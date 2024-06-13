@@ -1,4 +1,4 @@
-package org.kata.payment.validation;
+package org.kata.payment.features.configuration;
 
 import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
