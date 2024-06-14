@@ -244,3 +244,7 @@ Fvalidation-test/src/test/java/org/kata/payment/steps/PaymentSteps.java,6\d\6d2
 README.en.md,a\a\aa5e4056296d0afdf1ef1b9e5e2e766134a0fc6e
 ç
 ]validation-test/src/test/java/org/kata/payment/configuration/CucumberSpringConfiguration.java,4\1\41afaa4f548777335451183416f0ab5f9779ae78
+H
+.github/workflows/ci.yml,8\9\899ce9c202bf7bb5480e72836c3edc773c9c4244
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

@@ -81,7 +81,7 @@ public class PaymentSteps extends CucumberSpringConfiguration {
     @When("I modify the transaction to status CAPTURED")
     public void modifyTransactionToCaptured() throws Exception {
         createdPayment.setStatus(Payment.PaymentStatus.CAPTURED);
-        PaymentRequest paymentRequest = new PaymentRequest(
+        var paymentRequest = new PaymentRequest(
                 createdPayment.getPaymentType(),
                 createdPayment.getStatus(),
                 createdPayment.getItems().stream()
@@ -106,7 +106,7 @@ public class PaymentSteps extends CucumberSpringConfiguration {
     public void createPaypalTransaction(int bikeQuantity, double bikePrice, int shoesQuantity, double shoesPrice) throws Exception {
         mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
 
-        PaymentRequest paymentRequest = new PaymentRequest(
+        var paymentRequest = new PaymentRequest(
                 Payment.PaymentType.PAYPAL,
                 Payment.PaymentStatus.NEW,
                 List.of(
@@ -115,7 +115,7 @@ public class PaymentSteps extends CucumberSpringConfiguration {
                 )
         );
 
-        String response = mockMvc.perform(post("/payments")
+        var response = mockMvc.perform(post("/payments")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(paymentRequest)))
                 .andExpect(status().isOk())
@@ -123,7 +123,7 @@ public class PaymentSteps extends CucumberSpringConfiguration {
                 .getResponse()
                 .getContentAsString();
 
-        PaymentResponse paymentResponse = objectMapper.readValue(response, PaymentResponse.class);
+        var paymentResponse = objectMapper.readValue(response, PaymentResponse.class);
         createdPayment = managePayment.readingPayment(new PaymentId(paymentResponse.id()));
     }
 
