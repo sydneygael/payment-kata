@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="fix(validation-tests): feature runner">
-      <change afterPath="$PROJECT_DIR$/README.en.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/runner/ValidationRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/configuration/CucumberSpringConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/features/ValidationTestsRunner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/features/configuration/CucumberSpringConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/features/steps/PaymentSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/steps/PaymentSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validation-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/validation-test/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/runner/ValidationRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/runner/ValidationRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/steps/PaymentSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/steps/PaymentSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,36 +40,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.PaymentApplication.executor": "Run",
-    "Cucumber Java.Feature: payment.executor": "Run",
-    "Cucumber Java.Scenario: Create and modify a CREDIT_CARD transaction.executor": "Run",
-    "JUnit.PaymentApplicationServiceTest.executor": "Run",
-    "JUnit.PaymentControllerTest.executor": "Run",
-    "JUnit.PaymentTest.executor": "Coverage",
-    "JUnit.PaymentsInMemoryTest.executor": "Run",
-    "JUnit.PaymentsJpaTest.executor": "Run",
-    "JUnit.TransactionTest.executor": "Run",
-    "JUnit.ValidationRunner.executor": "Run",
-    "JUnit.ValidationTestsRunner (1).executor": "Run",
-    "JUnit.ValidationTestsRunner.executor": "Run",
-    "JUnit.ValidationTestsRunner.objectMapper.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/sydne/IdeaProjects/onepay-kata",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.PaymentApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: payment.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Create and modify a CREDIT_CARD transaction.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentApplicationServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.PaymentsInMemoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentsJpaTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TransactionTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ValidationRunner.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ValidationTestsRunner (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ValidationTestsRunner.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ValidationTestsRunner.objectMapper.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sydne/IdeaProjects/onepay-kata&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.kata.payment.infrastructure.adapters.outbound.persistence.entity" />
@@ -139,9 +137,18 @@
           <option name="PATTERN" value="org.kata.payment.runner.*" />
           <option name="ENABLED" value="true" />
         </pattern>
+        <pattern>
+          <option name="PATTERN" value="org.kata.payment.steps.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="org.kata.payment.configuration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.kata.payment.runner" />
       <option name="MAIN_CLASS_NAME" value="org.kata.payment.runner.ValidationRunner" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -353,7 +360,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718239519030</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fix(validation-tests): feature runner">
+      <option name="closed" value="true" />
+      <created>1718389580356</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1718389580356</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -412,7 +427,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/runner/ValidationRunner.java</url>
-          <line>7</line>
+          <line>5</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>

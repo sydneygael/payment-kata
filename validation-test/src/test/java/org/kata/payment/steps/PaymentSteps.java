@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.kata.payment.application.ports.input.ManagePayment;
+import org.kata.payment.configuration.CucumberSpringConfiguration;
 import org.kata.payment.domain.aggregat.Payment;
 import org.kata.payment.domain.valueobject.PaymentId;
 import org.kata.payment.infrastructure.adapters.inbound.rest.dto.PaymentRequest;
@@ -22,7 +23,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
-public class PaymentSteps {
+public class PaymentSteps extends CucumberSpringConfiguration {
 
     @Autowired
     private WebApplicationContext context;

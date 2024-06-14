@@ -236,17 +236,11 @@ oinfrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/r
 minfrastructure/src/test/java/org/kata/payment/infrastructure/adapters/inbound/rest/PaymentControllerTest.java,7\3\7302dfd370be494c11bcf68824ffb1473c28e645
 G
 validation-test/pom.xml,6\e\6e2625a3f0965a26a4854ab21306e39b81d44181
-
-Ovalidation-test/src/test/java/org/kata/payment/features/steps/PaymentSteps.java,2\e\2ed8259a6b4e94262c06109f31c25d436bf700c4
-–
-fvalidation-test/src/test/java/org/kata/payment/features/configuration/CucumberSpringConfiguration.java,c\a\cacd5df42e4e1e10e5191e099681efae236c2857
-€
-Pvalidation-test/src/test/java/org/kata/payment/runner/ValidationTestsRunner.java,1\e\1ed5c4abd1262149bca3dd3e8ae8e90b778c08f1
 {
 Kvalidation-test/src/test/java/org/kata/payment/runner/ValidationRunner.java,6\0\60e40522ce9301141d3398993b5aa74b4731654d
 v
 Fvalidation-test/src/test/java/org/kata/payment/steps/PaymentSteps.java,6\d\6d21c02ebe717b9e3b5323e0990ff99b4af3850e
-
-]validation-test/src/test/java/org/kata/payment/configuration/CucumberSpringConfiguration.java,4\1\41afaa4f548777335451183416f0ab5f9779ae78
 <
 README.en.md,a\a\aa5e4056296d0afdf1ef1b9e5e2e766134a0fc6e
+
+]validation-test/src/test/java/org/kata/payment/configuration/CucumberSpringConfiguration.java,4\1\41afaa4f548777335451183416f0ab5f9779ae78
