@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="feat(validation-tests): runner + maven fix">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.en.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/steps/PaymentSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/steps/PaymentSteps.java" afterDir="false" />
+    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="ci: add GitHub Action to build and test validation-test module">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -375,7 +370,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718390813835</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="ci: add GitHub Action to build and test validation-test module">
+      <option name="closed" value="true" />
+      <created>1718391233223</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1718391233223</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -413,7 +416,8 @@
     <MESSAGE value="wip(validation-tests): create runner class" />
     <MESSAGE value="fix(validation-tests): feature runner" />
     <MESSAGE value="feat(validation-tests): runner + maven fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(validation-tests): runner + maven fix" />
+    <MESSAGE value="ci: add GitHub Action to build and test validation-test module" />
+    <option name="LAST_COMMIT_MESSAGE" value="ci: add GitHub Action to build and test validation-test module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
