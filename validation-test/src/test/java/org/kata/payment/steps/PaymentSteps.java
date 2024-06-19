@@ -16,6 +16,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -38,7 +39,7 @@ public class PaymentSteps extends CucumberSpringConfiguration {
     private Payment createdPayment;
 
     @Given("I create a transaction with payment type {word} for {int} T-shirts costing {double} Euros each")
-    public void createTransaction(String paymentType, int quantity, double price) throws Exception {
+    public void createTransaction(String paymentType, int quantity, BigDecimal price) throws Exception {
         mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
 
         var paymentRequest = new PaymentRequest(
@@ -103,7 +104,7 @@ public class PaymentSteps extends CucumberSpringConfiguration {
     }
 
     @Given("I create a transaction with payment type PAYPAL for {int} bike costing {double} Euros and {int} pair of shoes costing {double} Euros")
-    public void createPaypalTransaction(int bikeQuantity, double bikePrice, int shoesQuantity, double shoesPrice) throws Exception {
+    public void createPaypalTransaction(int bikeQuantity, BigDecimal bikePrice, int shoesQuantity, BigDecimal shoesPrice) throws Exception {
         mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
 
         var paymentRequest = new PaymentRequest(
@@ -148,10 +149,10 @@ public class PaymentSteps extends CucumberSpringConfiguration {
 
     @Given("I have created multiple transactions")
     public void createMultipleTransactions() throws Exception {
-        createTransaction("CREDIT_CARD", 5, 19.99);
+        createTransaction("CREDIT_CARD", 5, BigDecimal.valueOf(19.99));
         modifyTransactionToAuthorized();
         modifyTransactionToCaptured();
-        createPaypalTransaction(1, 208.00, 1, 30.00);
+        createPaypalTransaction(1, BigDecimal.valueOf(208.00), 1, BigDecimal.valueOf(30.00));
         modifyTransactionToCanceled();
     }
 

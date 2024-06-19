@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="fix(ci): use BigDecimal in infra layer">
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/entity/PaymentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/entity/PaymentEntity.java" afterDir="false" />
+    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="fix(ci): validation tests">
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/org/kata/payment/infrastructure/adapters/inbound/rest/PaymentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/org/kata/payment/infrastructure/adapters/inbound/rest/PaymentControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -445,7 +445,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718812232885</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="chore(perfs):improve hibernate">
+      <option name="closed" value="true" />
+      <created>1718812431047</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1718812431047</updated>
+    </task>
+    <task id="LOCAL-00032" summary="fix(ci): validation tests">
+      <option name="closed" value="true" />
+      <created>1718812806361</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1718812806361</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -460,8 +476,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(tdd): It is only possible to change the transaction status to `CAPTURED` when the transaction is currently in status `AUTHORIZED`." />
-    <MESSAGE value="feat(tdd): init project + nominal test cases" />
     <MESSAGE value="refactor: It is not possible to change the purchase order when the transaction is modified." />
     <MESSAGE value="feat(application): create the appplication layer + unit tests" />
     <MESSAGE value="chore(application): fix some sonar" />
@@ -485,7 +499,9 @@
     <MESSAGE value="chore(amount): remove useless comments" />
     <MESSAGE value="chore(improve-state): Open/closed State pattern" />
     <MESSAGE value="fix(ci): use BigDecimal in infra layer" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(ci): use BigDecimal in infra layer" />
+    <MESSAGE value="chore(perfs):improve hibernate" />
+    <MESSAGE value="fix(ci): validation tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(ci): validation tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

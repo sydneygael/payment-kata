@@ -5,6 +5,7 @@ import org.kata.payment.domain.valueobject.Item;
 import org.kata.payment.domain.valueobject.Money;
 import org.kata.payment.domain.valueobject.PaymentId;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public record PaymentRequest(
@@ -21,7 +22,7 @@ public record PaymentRequest(
                 .build();
     }
 
-    public record ItemRequest(String name, double price, int quantity) {
+    public record ItemRequest(String name, BigDecimal price, int quantity) {
         public Item toDomain() {
             return new Item(name, new Money(price), quantity);
         }

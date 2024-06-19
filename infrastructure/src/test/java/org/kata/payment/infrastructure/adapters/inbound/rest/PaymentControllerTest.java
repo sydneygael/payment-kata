@@ -14,6 +14,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 
@@ -42,7 +43,7 @@ class PaymentControllerTest {
         var paymentRequest = new PaymentRequest(
                 Payment.PaymentType.CREDIT_CARD,
                 Payment.PaymentStatus.NEW,
-                Collections.singletonList(new PaymentRequest.ItemRequest("T-shirt", 19.99, 5))
+                Collections.singletonList(new PaymentRequest.ItemRequest("T-shirt", BigDecimal.valueOf(19.99), 5))
         );
 
         var createdPayment = Payment.builder()
@@ -74,7 +75,7 @@ class PaymentControllerTest {
         var paymentRequest = new PaymentRequest(
                 Payment.PaymentType.CREDIT_CARD,
                 Payment.PaymentStatus.AUTHORIZED,
-                Collections.singletonList(new PaymentRequest.ItemRequest("T-shirt", 19.99, 5))
+                Collections.singletonList(new PaymentRequest.ItemRequest("T-shirt", BigDecimal.valueOf(19.99), 5))
         );
 
         var existingPayment = Payment.builder()
