@@ -10,26 +10,21 @@ import org.kata.payment.domain.valueobject.Item;
 import org.kata.payment.domain.valueobject.Money;
 import org.kata.payment.domain.valueobject.PaymentId;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 @EqualsAndHashCode
 @NoArgsConstructor
+@Getter
 @Setter
 public class Payment {
 
-    @Getter
     private PaymentId id;
-    @Getter
     private PaymentType paymentType;
-    @Getter
-    private PaymentState state;
-    @Getter
-    private List<Item> items;
+    private PaymentState state = new NewState();
+    private List<Item> items = new ArrayList<>();
     private boolean stateModified;
-    @Getter
     private PaymentStatus status = PaymentStatus.NEW;
 
     public void authorize() {
@@ -50,14 +45,10 @@ public class Payment {
         stateModified = true;
     }
 
-    public PaymentStatus getPaymentStatus() {
-        return status;
-    }
-
     public Money totalAmount() {
-        double total = items.stream()
-                .mapToDouble(item -> item.price().amount() * item.quantity())
-                .sum();
+        BigDecimal total = items.stream()
+                .map(item -> item.price().amount().multiply(BigDecimal.valueOf(item.quantity())))
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
         return new Money(total);
     }
 
@@ -118,15 +109,13 @@ public class Payment {
 
         public Payment build() {
             var payment = new Payment();
-            payment.setId(id);
-            payment.setPaymentType(paymentType);
-            payment.setState(state);
-            payment.setItems(items);
-            payment.setStatus(status);
-            payment.setStateModified(false); // Set stateModified to false by default
+            payment.id = id;
+            payment.paymentType = paymentType;
+            payment.state = state;
+            payment.items = items != null ? items : new ArrayList<>();
+            payment.status = status;
+            payment.stateModified = false; // Set stateModified to false by default
             return payment;
         }
-
-
     }
 }

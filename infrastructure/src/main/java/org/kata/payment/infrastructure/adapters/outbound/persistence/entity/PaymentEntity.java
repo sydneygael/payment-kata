@@ -40,7 +40,7 @@ public class PaymentEntity implements Serializable {
     public PaymentEntity(Payment payment) {
         this.id = payment.getId() != null ? Long.valueOf(payment.getId().id()) : null;
         this.paymentType = payment.getPaymentType();
-        this.status = payment.getPaymentStatus();
+        this.status = payment.getStatus();
         this.items = payment.getItems().stream()
                 .map(ItemEntity::new)
                 .peek(itemEntity -> itemEntity.setPayment(this))

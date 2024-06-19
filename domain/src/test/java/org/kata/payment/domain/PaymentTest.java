@@ -25,7 +25,7 @@ class PaymentTest {
                 .paymentType(Payment.PaymentType.CREDIT_CARD)
                 .items(Collections.emptyList())
                 .build();
-        assertEquals(Payment.PaymentStatus.NEW, payment.getPaymentStatus());
+        assertEquals(Payment.PaymentStatus.NEW, payment.getStatus());
     }
 
     @Test
@@ -37,7 +37,7 @@ class PaymentTest {
                 .state(new AuthorizedState())
                 .build();
         payment.capture();
-        assertEquals(Payment.PaymentStatus.CAPTURED, payment.getPaymentStatus());
+        assertEquals(Payment.PaymentStatus.CAPTURED, payment.getStatus());
     }
 
     @Test
@@ -60,7 +60,7 @@ class PaymentTest {
                 .state(new NewState())
                 .build();
         payment.cancel();
-        assertEquals(Payment.PaymentStatus.CANCELED, payment.getPaymentStatus());
+        assertEquals(Payment.PaymentStatus.CANCELED, payment.getStatus());
     }
 
     @Test

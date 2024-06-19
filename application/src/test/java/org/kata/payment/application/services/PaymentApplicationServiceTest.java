@@ -29,7 +29,7 @@ class PaymentApplicationServiceTest {
         // GIVEN
         var payment = Payment.builder()
                 .paymentType(Payment.PaymentType.CREDIT_CARD)
-                .id(new PaymentId())
+                .id(new PaymentId("1"))
                 .state(new NewState())
                 .items(Collections.emptyList())
                 .build();

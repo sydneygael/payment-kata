@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="ci: add GitHub Action to build and test validation-test module">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="fix(ci): github pages">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/64178e4df5f3c8f704a048a92588ee791ad61c56" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/64178e4df5f3c8f704a048a92588ee791ad61c56" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/test/java/org/kata/payment/application/services/PaymentApplicationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/test/java/org/kata/payment/application/services/PaymentApplicationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/aggregat/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/aggregat/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/valueobject/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/valueobject/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/valueobject/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/valueobject/Money.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/test/java/org/kata/payment/domain/PaymentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/org/kata/payment/domain/PaymentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/entity/PaymentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/entity/PaymentEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/org/kata/payment/infrastructure/adapters/inbound/rest/PaymentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/org/kata/payment/infrastructure/adapters/inbound/rest/PaymentControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,36 +45,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.PaymentApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: payment.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Create and modify a CREDIT_CARD transaction.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PaymentApplicationServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PaymentControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PaymentTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.PaymentsInMemoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PaymentsJpaTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TransactionTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ValidationRunner.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ValidationTestsRunner (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ValidationTestsRunner.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ValidationTestsRunner.objectMapper.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sydne/IdeaProjects/onepay-kata&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.PaymentApplication.executor": "Run",
+    "Cucumber Java.Feature: payment.executor": "Run",
+    "Cucumber Java.Scenario: Create and modify a CREDIT_CARD transaction.executor": "Run",
+    "JUnit.PaymentApplicationServiceTest.executor": "Run",
+    "JUnit.PaymentControllerTest.executor": "Run",
+    "JUnit.PaymentTest.executor": "Run",
+    "JUnit.PaymentsInMemoryTest.executor": "Run",
+    "JUnit.PaymentsJpaTest.executor": "Run",
+    "JUnit.TransactionTest.executor": "Run",
+    "JUnit.ValidationRunner.executor": "Run",
+    "JUnit.ValidationTestsRunner (1).executor": "Run",
+    "JUnit.ValidationTestsRunner.executor": "Run",
+    "JUnit.ValidationTestsRunner.objectMapper.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/sydne/IdeaProjects/onepay-kata",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.kata.payment.infrastructure.adapters.outbound.persistence.entity" />
@@ -91,7 +102,7 @@
       <recent name="org.kata.payment.application.services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ValidationRunner">
+  <component name="RunManager" selected="JUnit.PaymentTest">
     <configuration name="PaymentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.kata.payment.infrastructure.PaymentApplication" />
       <module name="infrastructure" />
@@ -124,6 +135,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PaymentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="domain" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.kata.payment.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.kata.payment.domain" />
+      <option name="MAIN_CLASS_NAME" value="org.kata.payment.domain.PaymentTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ValidationRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="validation-test" />
       <extension name="coverage">
@@ -151,13 +177,15 @@
     <list>
       <item itemvalue="Application.PaymentApplication" />
       <item itemvalue="Cucumber Java.Feature: payment" />
+      <item itemvalue="JUnit.PaymentTest" />
       <item itemvalue="JUnit.ValidationRunner" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PaymentTest" />
+        <item itemvalue="Application.PaymentApplication" />
         <item itemvalue="JUnit.ValidationRunner" />
         <item itemvalue="Cucumber Java.Feature: payment" />
-        <item itemvalue="Application.PaymentApplication" />
       </list>
     </recent_temporary>
   </component>

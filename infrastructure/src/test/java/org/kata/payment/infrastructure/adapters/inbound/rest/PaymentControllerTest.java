@@ -61,7 +61,7 @@ class PaymentControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(createdPayment.getId().id()))
                 .andExpect(jsonPath("$.paymentType").value(createdPayment.getPaymentType().name().toUpperCase()))
-                .andExpect(jsonPath("$.paymentStatus").value(createdPayment.getPaymentStatus().name()))
+                .andExpect(jsonPath("$.paymentStatus").value(createdPayment.getStatus().name()))
                 .andExpect(jsonPath("$.items", hasSize(1)))
                 .andExpect(jsonPath("$.items[0].name").value("T-shirt"))
                 .andExpect(jsonPath("$.items[0].price").value(19.99))
