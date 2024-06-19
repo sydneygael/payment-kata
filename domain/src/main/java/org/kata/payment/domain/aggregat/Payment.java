@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.kata.payment.domain.state.NewState;
+import org.kata.payment.domain.state.PaymentEvent;
 import org.kata.payment.domain.state.PaymentState;
 import org.kata.payment.domain.valueobject.Item;
 import org.kata.payment.domain.valueobject.Money;
@@ -28,19 +29,19 @@ public class Payment {
     private PaymentStatus status = PaymentStatus.NEW;
 
     public void authorize() {
-        state.authorized(this);
+        state.handle(this, PaymentEvent.AUTHORIZE);
         status = state.getStatus();
         stateModified = true;
     }
 
     public void capture() {
-        state.captured(this);
+        state.handle(this,PaymentEvent.CAPTURE);
         status = state.getStatus();
         stateModified = true;
     }
 
     public void cancel() {
-        state.canceled(this);
+        state.handle(this,PaymentEvent.CANCEL);
         status = state.getStatus();
         stateModified = true;
     }
