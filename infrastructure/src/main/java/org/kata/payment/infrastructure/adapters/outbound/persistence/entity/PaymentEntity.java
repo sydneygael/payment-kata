@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.kata.payment.domain.aggregat.Payment;
 import org.kata.payment.domain.valueobject.PaymentId;
 
@@ -34,7 +36,8 @@ public class PaymentEntity implements Serializable {
     @Column(name = "payment_status", nullable = false)
     private Payment.PaymentStatus status;
 
-    @OneToMany(mappedBy = "payment", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "payment", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @Fetch(FetchMode.JOIN)
     private List<ItemEntity> items;
 
     public PaymentEntity(Payment payment) {
