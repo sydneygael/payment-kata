@@ -3,6 +3,7 @@ package org.kata.payment.infrastructure.adapters.inbound.rest.dto;
 import org.kata.payment.domain.aggregat.Payment;
 import org.kata.payment.domain.valueobject.Item;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public record PaymentResponse(
@@ -21,7 +22,7 @@ public record PaymentResponse(
     }
 
 
-    public record ItemResponse(String name, double price, int quantity) {
+    public record ItemResponse(String name, BigDecimal price, int quantity) {
         public static ItemResponse fromDomain(Item item) {
             return new ItemResponse(item.name(), item.price().amount(), item.quantity());
         }

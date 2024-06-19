@@ -9,6 +9,7 @@ import org.kata.payment.domain.valueobject.Money;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "items")
@@ -28,7 +29,7 @@ public class ItemEntity implements Serializable {
     private String name;
 
     @Column(name = "item_price", nullable = false)
-    private Double price;
+    private BigDecimal price;
 
     @Column(name = "item_quantity", nullable = false)
     private Integer quantity;

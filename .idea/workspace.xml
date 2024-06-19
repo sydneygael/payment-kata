@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="chore(amount): remove useless comments">
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/AbstractPaymentState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/PaymentEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/18da4d21185741ec94141b85bca8ecc06fe92b5f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/18da4d21185741ec94141b85bca8ecc06fe92b5f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="chore(improve-state): Open/closed State pattern">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/aggregat/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/aggregat/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/AuthorizedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/AuthorizedState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/CanceledState.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/CanceledState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/CapturedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/CapturedState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/NewState.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/NewState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/PaymentState.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/kata/payment/domain/state/PaymentState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/rest/dto/PaymentResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/inbound/rest/dto/PaymentResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/entity/ItemEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/adapters/outbound/persistence/entity/ItemEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +94,7 @@
       <recent name="org.kata.payment.application.services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PaymentTest">
+  <component name="RunManager" selected="JUnit.PaymentControllerTest">
     <configuration name="PaymentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.kata.payment.infrastructure.PaymentApplication" />
       <module name="infrastructure" />
@@ -132,6 +123,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="infrastructure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.kata.payment.infrastructure.adapters.inbound.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.kata.payment.infrastructure.adapters.inbound.rest" />
+      <option name="MAIN_CLASS_NAME" value="org.kata.payment.infrastructure.adapters.inbound.rest.PaymentControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -178,11 +184,13 @@
     <list>
       <item itemvalue="Application.PaymentApplication" />
       <item itemvalue="Cucumber Java.Feature: payment" />
+      <item itemvalue="JUnit.PaymentControllerTest" />
       <item itemvalue="JUnit.PaymentTest" />
       <item itemvalue="JUnit.ValidationRunner" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PaymentControllerTest" />
         <item itemvalue="JUnit.PaymentTest" />
         <item itemvalue="Application.PaymentApplication" />
         <item itemvalue="JUnit.ValidationRunner" />
@@ -423,7 +431,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718810529632</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="chore(improve-state): Open/closed State pattern">
+      <option name="closed" value="true" />
+      <created>1718811896476</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1718811896476</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -438,7 +454,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="chore(.idea): remove idea from gitignore" />
     <MESSAGE value="feat(tdd): A newly created `Transaction` must be in the status `NEW`." />
     <MESSAGE value="feat(tdd): It is only possible to change the transaction status to `CAPTURED` when the transaction is currently in status `AUTHORIZED`." />
     <MESSAGE value="feat(tdd): init project + nominal test cases" />
@@ -463,7 +478,8 @@
     <MESSAGE value="ci: add GitHub Action to build and test validation-test module" />
     <MESSAGE value="fix(amount): use Bigdecimal" />
     <MESSAGE value="chore(amount): remove useless comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore(amount): remove useless comments" />
+    <MESSAGE value="chore(improve-state): Open/closed State pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore(improve-state): Open/closed State pattern" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
