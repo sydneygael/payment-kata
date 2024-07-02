@@ -89,8 +89,9 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${springboot.version}</version>
                 <configuration>
-                    <finalName>payment-app</finalName>
-                    <jvmArguments>-Dspring.application.admin.enabled=true</jvmArguments>
+                    <finalName>payment</finalName>
+                    <mainClass>org.kata.payment.infrastructure.PaymentApplication</mainClass>
+                    <layout>JAR</layout>
                 </configuration>
                 <executions>
                     <execution>

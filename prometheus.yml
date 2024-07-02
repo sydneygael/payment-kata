@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'springboot-app-vt'
+    static_configs:
+      - targets: ['app-vt:9090']
+
+  - job_name: 'springboot-app-classic'
+    static_configs:
+      - targets: ['app-classic:9090']

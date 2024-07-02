@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  app-vt:
+    build:
+      dockerfile: Dockerfile.vt
+      context: .
+    #image: app-vt
+    ports:
+      - "9091:9090"
+
+  app-classic:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: app-classic
+    ports:
+      - "9090:9090"
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9093:9090"
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+
+  jmeter:
+    image: justb4/jmeter
+    volumes:
+      - ./jmeter:/test
+    entrypoint: ["jmeter", "-n", "-t", "/test/test_plan.jmx", "-l", "/test/results.jtl", "-e", "-o", "/test/report"]
+    depends_on:
+      - app-classic
+      - app-vt
+volumes:
+  grafana-storage:
