@@ -4,28 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="fix(ci): validation tests">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile.vt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/configuration/TomcatConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jmeter/test_plan.jmx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perf-test/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perf-test/src/test/java/org/kata/simulation/PaymentSimulation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prometheus.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="build(deps): upgrade to Java 25 with springboot 4 using grade">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/infrastructure">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="one-pay-kata" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="one-pay-kata" type="f1a62948:ProjectNode" />
+                <item name="infrastructure" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="one-pay-kata" type="f1a62948:ProjectNode" />
+                <item name="infrastructure" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="one-pay-kata" type="f1a62948:ProjectNode" />
+                <item name="perf-test" type="2d1252cf:ModuleNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -42,6 +69,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\sydne\.gradle\wrapper\dists\gradle-9.0-bin\3czi7dcr1pf879blyy9qczdy7\gradle-9.0.0" javaHome="C:\Program Files\Java\jdk-21" gradleVersion="9.0.0" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -55,6 +83,8 @@
     &quot;Application.PaymentApplication.executor&quot;: &quot;Run&quot;,
     &quot;Cucumber Java.Feature: payment.executor&quot;: &quot;Run&quot;,
     &quot;Cucumber Java.Scenario: Create and modify a CREDIT_CARD transaction.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build payment-kata.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PaymentApplicationServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PaymentApplicationServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PaymentControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PaymentTest.executor&quot;: &quot;Run&quot;,
@@ -66,18 +96,29 @@
     &quot;JUnit.ValidationTestsRunner.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ValidationTestsRunner.objectMapper.executor&quot;: &quot;Run&quot;,
     &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;Spring Boot.PaymentApplication.executor&quot;: &quot;Run&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sydne/IdeaProjects/onepay-kata&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/repositories/edwyn/payment-kata/domain&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preference.NewJMeterHomeConfigurable&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -88,7 +129,11 @@
       <recent name="org.kata.onepay.domain" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\sydne\IdeaProjects\onepay-kata" />
+      <recent name="C:\repositories\edwyn\payment-kata\domain" />
+      <recent name="C:\repositories\edwyn\payment-kata\infrastructure" />
+      <recent name="C:\repositories\edwyn\payment-kata\perf-test" />
+      <recent name="C:\repositories\edwyn\payment-kata\validation-test" />
+      <recent name="C:\repositories\edwyn\payment-kata\application" />
     </key>
     <key name="CreateBuilderDialog.RecentsKey">
       <recent name="org.kata.payment.domain.aggregat" />
@@ -110,7 +155,7 @@
       <recent name="org.kata.payment.application.services" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PaymentApplication">
+  <component name="RunManager" selected="Gradle.PaymentApplicationServiceTest">
     <configuration name="PaymentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.kata.payment.infrastructure.PaymentApplication" />
       <module name="infrastructure" />
@@ -124,24 +169,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: payment" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/validation-test/src/test/resources/features/payment.feature" />
-      <option name="GLUE" value="org.kata.payment.steps org.kata.payment.runner org.kata.payment.configuration" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="validation-test" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: payment" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="PaymentApplicationServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":application:test" />
+            <option value="--tests" />
+            <option value="&quot;org.kata.payment.application.services.PaymentApplicationServiceTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration name="PaymentControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="infrastructure" />
@@ -197,22 +247,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="payment-kata" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="payment-kata" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PaymentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="payments.infrastructure.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.kata.payment.infrastructure.PaymentApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.PaymentApplication" />
-      <item itemvalue="Cucumber Java.Feature: payment" />
+      <item itemvalue="Gradle.PaymentApplicationServiceTest" />
       <item itemvalue="JUnit.PaymentControllerTest" />
       <item itemvalue="JUnit.PaymentTest" />
       <item itemvalue="JUnit.ValidationRunner" />
+      <item itemvalue="Spring Boot.PaymentApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PaymentApplicationServiceTest" />
         <item itemvalue="Application.PaymentApplication" />
         <item itemvalue="JUnit.PaymentControllerTest" />
         <item itemvalue="JUnit.PaymentTest" />
         <item itemvalue="JUnit.ValidationRunner" />
-        <item itemvalue="Cucumber Java.Feature: payment" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-IU-252.25557.131" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -222,6 +299,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718114627106</updated>
+      <workItem from="1757684098760" duration="1656000" />
+      <workItem from="1757685765346" duration="7763000" />
+      <workItem from="1759476854531" duration="1434000" />
+      <workItem from="1761058858151" duration="371000" />
     </task>
     <task id="LOCAL-00001" summary="chore: initial commit and import project sources">
       <option name="closed" value="true" />
@@ -487,8 +568,67 @@
       <option name="project" value="LOCAL" />
       <updated>1718813021191</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="build(deps): upgrade to Java 24 with preview features enabled">
+      <option name="closed" value="true" />
+      <created>1757693300968</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1757693300968</updated>
+    </task>
+    <task id="LOCAL-00035" summary="build(deps): upgrade to Java 24 with preview features enabled">
+      <option name="closed" value="true" />
+      <created>1757693406145</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1757693406145</updated>
+    </task>
+    <task id="LOCAL-00036" summary="build(deps): upgrade to Java 24 with preview features enabled">
+      <option name="closed" value="true" />
+      <created>1757693478726</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1757693478726</updated>
+    </task>
+    <task id="LOCAL-00037" summary="build(deps): upgrade to Java 24 with preview features enabled">
+      <option name="closed" value="true" />
+      <created>1757693601418</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1757693601418</updated>
+    </task>
+    <task id="LOCAL-00038" summary="build(deps): upgrade to Java 25 with springboot 4 using grade">
+      <option name="closed" value="true" />
+      <created>1759481156944</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1759481156944</updated>
+    </task>
+    <task id="LOCAL-00039" summary="build(deps): upgrade to Java 25 with springboot 4 using grade">
+      <option name="closed" value="true" />
+      <created>1759481178335</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1759481178335</updated>
+    </task>
+    <task id="LOCAL-00040" summary="build(deps): upgrade to Java 25 with springboot 4 using grade">
+      <option name="closed" value="true" />
+      <created>1761059141528</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1761059141528</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -502,9 +642,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: It is not possible to change the purchase order when the transaction is modified." />
-    <MESSAGE value="feat(application): create the appplication layer + unit tests" />
-    <MESSAGE value="chore(application): fix some sonar" />
     <MESSAGE value="wip(infra): start configuring beans + adapters" />
     <MESSAGE value="feat(database): add database adapters for Payment entity" />
     <MESSAGE value="refactor(project): fix some warning" />
@@ -527,26 +664,14 @@
     <MESSAGE value="fix(ci): use BigDecimal in infra layer" />
     <MESSAGE value="chore(perfs):improve hibernate" />
     <MESSAGE value="fix(ci): validation tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(ci): validation tests" />
+    <MESSAGE value="build(deps): upgrade to Java 24 with preview features enabled" />
+    <MESSAGE value="chore(deps): upgrade gith" />
+    <MESSAGE value="build(deps): upgrade to Java 25 with springboot 4 using grade" />
+    <option name="LAST_COMMIT_MESSAGE" value="build(deps): upgrade to Java 25 with springboot 4 using grade" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/PaymentApplicationService.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infrastructure/src/main/java/org/kata/payment/infrastructure/configuration/BeanConfiguration.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/application/src/main/java/org/kata/payment/application/services/PaymentApplicationService.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/validation-test/src/test/java/org/kata/payment/runner/ValidationRunner.java</url>
           <line>5</line>
