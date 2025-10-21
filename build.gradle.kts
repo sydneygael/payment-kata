@@ -66,6 +66,7 @@ project(":infrastructure") {
         implementation("org.springframework.boot:spring-boot-starter-actuator")
 
         implementation(project(":application"))
+        implementation(project(":domain"))
 
         // SpringDoc OpenAPI
         implementation("org.springdoc:springdoc-openapi-starter-webmvc-api:2.5.0")
@@ -90,9 +91,10 @@ project(":validation-test") {
     dependencies {
         implementation(project(":infrastructure"))
         testImplementation("org.springframework.boot:spring-boot-starter-test")
-        testImplementation("org.cucumber:cucumber-java:7.11.2")
-        testImplementation("org.cucumber:cucumber-spring:7.11.2")
-        testImplementation("org.cucumber:cucumber-junit-platform-engine:7.11.2")
+        testImplementation("io.cucumber:cucumber-java:7.30.0")
+        testImplementation("io.cucumber:cucumber-spring:7.30.0")
+        testImplementation("io.cucumber:cucumber-junit-platform-engine:7.30.0")
+        testImplementation("org.junit.platform:junit-platform-suite")
     }
 
     tasks.test {
@@ -101,6 +103,7 @@ project(":validation-test") {
         systemProperty("cucumber.features", "src/test/resources/features")
     }
 }
+
 
 // --------------------- MODULE PERF-TEST ---------------------
 project(":perf-test") {

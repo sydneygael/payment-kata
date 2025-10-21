@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="build(deps): upgrade to Java 25 with springboot 4 using grade" />
+    <list default="true" id="a2a25287-4fd5-4a6c-b036-f26c87c26650" name="Changes" comment="chore: add gradlew and fix cucumber">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +34,38 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="payments" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="payments" type="f1a62948:ProjectNode" />
+                <item name="validation-test" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="payments" type="f1a62948:ProjectNode" />
+                <item name="validation-test" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="payments" type="f1a62948:ProjectNode" />
+                <item name="validation-test" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="compileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="payments" type="f1a62948:ProjectNode" />
+                <item name="validation-test" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="testCompileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="payments" type="f1a62948:ProjectNode" />
+                <item name="validation-test" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
               </path>
             </expand>
             <select />
@@ -286,7 +322,7 @@
       <workItem from="1757684098760" duration="1656000" />
       <workItem from="1757685765346" duration="7763000" />
       <workItem from="1759476854531" duration="1434000" />
-      <workItem from="1761058858151" duration="658000" />
+      <workItem from="1761058858151" duration="2073000" />
     </task>
     <task id="LOCAL-00001" summary="chore: initial commit and import project sources">
       <option name="closed" value="true" />
@@ -616,7 +652,23 @@
       <option name="project" value="LOCAL" />
       <updated>1761059241155</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="chore: add gradlew">
+      <option name="closed" value="true" />
+      <created>1761059612232</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1761059612232</updated>
+    </task>
+    <task id="LOCAL-00043" summary="chore: add gradlew and fix cucumber">
+      <option name="closed" value="true" />
+      <created>1761060621944</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1761060621944</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,8 +686,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="wip(infra): start configuring beans + adapters" />
-    <MESSAGE value="feat(database): add database adapters for Payment entity" />
     <MESSAGE value="refactor(project): fix some warning" />
     <MESSAGE value="feat(payments): create payment rest endpoints" />
     <MESSAGE value="chore(sonar): fix some warnings" />
@@ -659,7 +709,9 @@
     <MESSAGE value="build(deps): upgrade to Java 24 with preview features enabled" />
     <MESSAGE value="chore(deps): upgrade gith" />
     <MESSAGE value="build(deps): upgrade to Java 25 with springboot 4 using grade" />
-    <option name="LAST_COMMIT_MESSAGE" value="build(deps): upgrade to Java 25 with springboot 4 using grade" />
+    <MESSAGE value="chore: add gradlew" />
+    <MESSAGE value="chore: add gradlew and fix cucumber" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: add gradlew and fix cucumber" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
