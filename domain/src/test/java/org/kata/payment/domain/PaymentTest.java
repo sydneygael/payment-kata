@@ -5,10 +5,6 @@ import org.kata.payment.domain.model.Item;
 import org.kata.payment.domain.model.Money;
 import org.kata.payment.domain.model.Payment;
 import org.kata.payment.domain.model.PaymentId;
-import org.kata.payment.domain.state.AuthorizedState;
-import org.kata.payment.domain.state.CanceledState;
-import org.kata.payment.domain.state.CapturedState;
-import org.kata.payment.domain.state.NewState;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,7 +30,7 @@ class PaymentTest {
                 .id(new PaymentId())
                 .paymentType(Payment.PaymentType.CREDIT_CARD)
                 .items(Collections.emptyList())
-                .state(new AuthorizedState())
+                .status(Payment.PaymentStatus.AUTHORIZED)
                 .build();
         payment.capture();
         assertEquals(Payment.PaymentStatus.CAPTURED, payment.getStatus());
@@ -46,7 +42,6 @@ class PaymentTest {
                 .id(new PaymentId())
                 .paymentType(Payment.PaymentType.CREDIT_CARD)
                 .items(Collections.emptyList())
-                .state(new NewState())
                 .build();
         assertThrows(IllegalStateException.class, payment::capture);
     }
@@ -57,7 +52,6 @@ class PaymentTest {
                 .id(new PaymentId())
                 .paymentType(Payment.PaymentType.CREDIT_CARD)
                 .items(Collections.emptyList())
-                .state(new NewState())
                 .build();
         payment.cancel();
         assertEquals(Payment.PaymentStatus.CANCELED, payment.getStatus());
@@ -69,7 +63,7 @@ class PaymentTest {
                 .id(new PaymentId())
                 .paymentType(Payment.PaymentType.CREDIT_CARD)
                 .items(Collections.emptyList())
-                .state(new CapturedState())
+                .status(Payment.PaymentStatus.CAPTURED)
                 .build();
         assertThrows(IllegalStateException.class, payment::cancel);
     }
@@ -80,7 +74,7 @@ class PaymentTest {
                 .id(new PaymentId())
                 .paymentType(Payment.PaymentType.CREDIT_CARD)
                 .items(Collections.emptyList())
-                .state(new CanceledState())
+                .status(Payment.PaymentStatus.CANCELED)
                 .build();
         assertThrows(IllegalStateException.class, payment::cancel);
     }
@@ -91,16 +85,10 @@ class PaymentTest {
                 .id(new PaymentId())
                 .paymentType(Payment.PaymentType.CREDIT_CARD)
                 .items(new ArrayList<>())
-                .state(new NewState())
                 .build();
 
-        // WHEN
         payment.authorize();
 
-        // THEN
         assertThrows(IllegalStateException.class, () -> payment.addItem(new Item("item", new Money(10.0), 1)));
     }
-
 }
-
-

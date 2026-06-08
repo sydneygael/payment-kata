@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.kata.payment.application.port.out.PaymentRepository;
 import org.kata.payment.domain.model.Payment;
 import org.kata.payment.domain.model.PaymentId;
-import org.kata.payment.domain.state.NewState;
 
 import java.util.Collections;
 import java.util.Optional;
@@ -29,7 +28,6 @@ class PaymentApplicationServiceTest {
         var payment = Payment.builder()
                 .paymentType(Payment.PaymentType.CREDIT_CARD)
                 .id(new PaymentId("1"))
-                .state(new NewState())
                 .items(Collections.emptyList())
                 .build();
 

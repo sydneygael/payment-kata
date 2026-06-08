@@ -1,8 +1,8 @@
 package org.kata.payment.domain.model;
 
-import org.kata.payment.domain.state.NewState;
-import org.kata.payment.domain.state.PaymentEvent;
 import org.kata.payment.domain.state.PaymentState;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -11,9 +11,11 @@ import java.util.Objects;
 
 public class Payment {
 
+    private static final Logger log = LoggerFactory.getLogger(Payment.class);
+
     private PaymentId id;
     private PaymentType paymentType;
-    private PaymentState state = new NewState();
+    private PaymentState state = new PaymentState.New();
     private List<Item> items = new ArrayList<>();
     private boolean stateModified;
     private PaymentStatus status = PaymentStatus.NEW;
@@ -28,21 +30,33 @@ public class Payment {
     public PaymentStatus getStatus() { return status; }
 
     public void authorize() {
-        state.handle(this, PaymentEvent.AUTHORIZE);
-        status = state.getStatus();
+        state = switch (state) {
+            case PaymentState.New _ -> new PaymentState.Authorized();
+            default -> throw new IllegalStateException("Cannot authorize from state " + state.status());
+        };
+        status = state.status();
         stateModified = true;
+        log.info("Payment {} transitioned to AUTHORIZED", id);
     }
 
     public void capture() {
-        state.handle(this, PaymentEvent.CAPTURE);
-        status = state.getStatus();
+        state = switch (state) {
+            case PaymentState.Authorized _ -> new PaymentState.Captured();
+            default -> throw new IllegalStateException("Cannot capture from state " + state.status());
+        };
+        status = state.status();
         stateModified = true;
+        log.info("Payment {} transitioned to CAPTURED", id);
     }
 
     public void cancel() {
-        state.handle(this, PaymentEvent.CANCEL);
-        status = state.getStatus();
+        state = switch (state) {
+            case PaymentState.New _, PaymentState.Authorized _ -> new PaymentState.Canceled();
+            default -> throw new IllegalStateException("Cannot cancel from state " + state.status());
+        };
+        status = state.status();
         stateModified = true;
+        log.info("Payment {} transitioned to CANCELED", id);
     }
 
     public Money totalAmount() {
@@ -63,11 +77,6 @@ public class Payment {
     public void updateDetails(PaymentType paymentType, List<Item> items) {
         this.paymentType = paymentType;
         this.items = items;
-    }
-
-    /** Called exclusively by state implementations to advance the state machine. */
-    public void changeState(PaymentState newState) {
-        this.state = newState;
     }
 
     @Override
@@ -97,7 +106,6 @@ public class Payment {
     public static final class Builder {
         private PaymentId id;
         private PaymentType paymentType;
-        private PaymentState state = new NewState();
         private List<Item> items = new ArrayList<>();
         private PaymentStatus status = PaymentStatus.NEW;
 
@@ -105,7 +113,6 @@ public class Payment {
 
         public Builder id(PaymentId id) { this.id = id; return this; }
         public Builder paymentType(PaymentType paymentType) { this.paymentType = paymentType; return this; }
-        public Builder state(PaymentState state) { this.state = state; return this; }
         public Builder items(List<Item> items) { this.items = items; return this; }
         public Builder status(PaymentStatus status) { this.status = status; return this; }
 
@@ -113,11 +120,20 @@ public class Payment {
             var payment = new Payment();
             payment.id = id;
             payment.paymentType = paymentType;
-            payment.state = state;
-            payment.items = items != null ? items : new ArrayList<>();
             payment.status = status;
+            payment.state = stateFrom(status);
+            payment.items = items != null ? items : new ArrayList<>();
             payment.stateModified = false;
             return payment;
+        }
+
+        private static PaymentState stateFrom(PaymentStatus status) {
+            return switch (status) {
+                case NEW        -> new PaymentState.New();
+                case AUTHORIZED -> new PaymentState.Authorized();
+                case CAPTURED   -> new PaymentState.Captured();
+                case CANCELED   -> new PaymentState.Canceled();
+            };
         }
     }
 }
