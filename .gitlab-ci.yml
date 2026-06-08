@@ -17,7 +17,7 @@ build:
   image: eclipse-temurin:25-jdk
   script:
     - chmod +x gradlew
-    - ./gradlew clean assemble -x test
+    - ./gradlew clean assemble -x test --build-cache
   artifacts:
     paths:
       - infrastructure/build/libs/*.jar
@@ -28,7 +28,7 @@ test:
   image: eclipse-temurin:25-jdk
   script:
     - chmod +x gradlew
-    - ./gradlew test
+    - ./gradlew test --build-cache
   artifacts:
     when: always
     reports:
