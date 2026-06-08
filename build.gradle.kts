@@ -22,7 +22,6 @@ subprojects {
         // BOM Spring Boot
         implementation(platform("org.springframework.boot:spring-boot-dependencies:4.0.0-M3"))
 
-
         // Dépendances de test communes
         testImplementation("org.junit.jupiter:junit-jupiter")
         testImplementation("org.assertj:assertj-core")
@@ -38,13 +37,6 @@ subprojects {
 project(":domain") {
     dependencies {
         implementation("org.slf4j:slf4j-api")
-    }
-}
-
-// --------------------- MODULE APPLICATION ---------------------
-project(":application") {
-    dependencies {
-        implementation(project(":domain"))
         testImplementation("org.springframework.boot:spring-boot-starter-test")
     }
 }
@@ -65,7 +57,6 @@ project(":infrastructure") {
         runtimeOnly("com.h2database:h2")
         implementation("org.springframework.boot:spring-boot-starter-actuator")
 
-        implementation(project(":application"))
         implementation(project(":domain"))
 
         // SpringDoc OpenAPI
@@ -86,7 +77,6 @@ project(":infrastructure") {
 project(":validation-test") {
     dependencies {
         implementation(project(":infrastructure"))
-        testImplementation(project(":application"))
         testImplementation(project(":domain"))
         testImplementation("org.springframework.boot:spring-boot-starter-web")
         testImplementation("org.springframework.boot:spring-boot-starter-test")

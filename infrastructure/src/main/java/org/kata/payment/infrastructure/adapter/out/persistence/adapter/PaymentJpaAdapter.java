@@ -1,6 +1,6 @@
 package org.kata.payment.infrastructure.adapter.out.persistence.adapter;
 
-import org.kata.payment.application.port.out.PaymentRepository;
+import org.kata.payment.domain.port.out.PaymentRepository;
 import org.kata.payment.domain.model.Payment;
 import org.kata.payment.domain.model.PaymentId;
 import org.kata.payment.infrastructure.adapter.out.persistence.mapper.PaymentPersistenceMapper;

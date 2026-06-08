@@ -1,20 +1,20 @@
-package org.kata.payment.application.service;
+package org.kata.payment.domain.service;
 
-import org.kata.payment.application.UseCase;
-import org.kata.payment.application.port.in.ManagePayment;
-import org.kata.payment.application.port.out.PaymentRepository;
+import org.kata.payment.domain.UseCase;
 import org.kata.payment.domain.exception.PaymentNotFoundException;
 import org.kata.payment.domain.model.Payment;
 import org.kata.payment.domain.model.PaymentId;
+import org.kata.payment.domain.port.in.ManagePayment;
+import org.kata.payment.domain.port.out.PaymentRepository;
 
 import java.util.List;
 
 @UseCase
-public class PaymentApplicationService implements ManagePayment {
+public class PaymentService implements ManagePayment {
 
     private final PaymentRepository paymentRepository;
 
-    public PaymentApplicationService(PaymentRepository paymentRepository) {
+    public PaymentService(PaymentRepository paymentRepository) {
         this.paymentRepository = paymentRepository;
     }
 

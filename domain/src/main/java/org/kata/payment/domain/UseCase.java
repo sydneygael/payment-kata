@@ -1,4 +1,4 @@
-package org.kata.payment.application;
+package org.kata.payment.domain;
 
 import java.lang.annotation.*;
 

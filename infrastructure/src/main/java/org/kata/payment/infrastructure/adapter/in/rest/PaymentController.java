@@ -3,7 +3,7 @@ package org.kata.payment.infrastructure.adapter.in.rest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.kata.payment.application.port.in.ManagePayment;
+import org.kata.payment.domain.port.in.ManagePayment;
 import org.kata.payment.domain.model.PaymentId;
 import org.kata.payment.infrastructure.adapter.in.rest.dto.PaymentRequest;
 import org.kata.payment.infrastructure.adapter.in.rest.dto.PaymentResponse;

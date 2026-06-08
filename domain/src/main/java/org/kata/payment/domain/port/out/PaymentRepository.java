@@ -1,4 +1,4 @@
-package org.kata.payment.application.port.out;
+package org.kata.payment.domain.port.out;
 
 import org.kata.payment.domain.model.Payment;
 import org.kata.payment.domain.model.PaymentId;

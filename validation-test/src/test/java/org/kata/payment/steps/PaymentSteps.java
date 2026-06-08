@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.kata.payment.application.port.in.ManagePayment;
+import org.kata.payment.domain.port.in.ManagePayment;
 import org.kata.payment.configuration.CucumberSpringConfiguration;
 import org.kata.payment.domain.model.Payment;
 import org.kata.payment.domain.model.PaymentId;

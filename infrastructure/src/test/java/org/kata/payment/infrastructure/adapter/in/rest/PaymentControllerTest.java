@@ -2,7 +2,7 @@ package org.kata.payment.infrastructure.adapter.in.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import org.kata.payment.application.port.in.ManagePayment;
+import org.kata.payment.domain.port.in.ManagePayment;
 import org.kata.payment.domain.model.Item;
 import org.kata.payment.domain.model.Money;
 import org.kata.payment.domain.model.Payment;

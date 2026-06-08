@@ -1,10 +1,10 @@
-package org.kata.payment.application.service;
+package org.kata.payment.domain.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.kata.payment.application.port.out.PaymentRepository;
 import org.kata.payment.domain.model.Payment;
 import org.kata.payment.domain.model.PaymentId;
+import org.kata.payment.domain.port.out.PaymentRepository;
 
 import java.util.Collections;
 import java.util.Optional;
@@ -12,15 +12,15 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-class PaymentApplicationServiceTest {
+class PaymentServiceTest {
 
-    private PaymentApplicationService paymentService;
+    private PaymentService paymentService;
     private PaymentRepository paymentRepository;
 
     @BeforeEach
     void setUp() {
         paymentRepository = mock(PaymentRepository.class);
-        paymentService = new PaymentApplicationService(paymentRepository);
+        paymentService = new PaymentService(paymentRepository);
     }
 
     @Test

@@ -1,4 +1,4 @@
-package org.kata.payment.application.port.in;
+package org.kata.payment.domain.port.in;
 
 import org.kata.payment.domain.exception.PaymentNotFoundException;
 import org.kata.payment.domain.model.Payment;

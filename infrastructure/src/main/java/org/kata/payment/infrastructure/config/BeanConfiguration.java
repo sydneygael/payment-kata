@@ -1,8 +1,8 @@
 package org.kata.payment.infrastructure.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.kata.payment.application.UseCase;
-import org.kata.payment.application.port.out.PaymentRepository;
+import org.kata.payment.domain.UseCase;
+import org.kata.payment.domain.port.out.PaymentRepository;
 import org.kata.payment.infrastructure.adapter.out.persistence.adapter.PaymentInMemoryAdapter;
 import org.kata.payment.infrastructure.adapter.out.persistence.adapter.PaymentJpaAdapter;
 import org.kata.payment.infrastructure.adapter.out.persistence.mapper.PaymentPersistenceMapper;
