@@ -2,11 +2,14 @@ package org.kata.payment.infrastructure.adapter.in.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import org.kata.payment.domain.port.in.ManagePayment;
 import org.kata.payment.domain.model.Item;
 import org.kata.payment.domain.model.Money;
 import org.kata.payment.domain.model.Payment;
 import org.kata.payment.domain.model.PaymentId;
+import org.kata.payment.domain.usecase.CreatePayment;
+import org.kata.payment.domain.usecase.GetAllPayments;
+import org.kata.payment.domain.usecase.ModifyPayment;
+import org.kata.payment.domain.usecase.ReadPayment;
 import org.kata.payment.infrastructure.adapter.in.rest.dto.PaymentRequest;
 import org.kata.payment.infrastructure.adapter.in.rest.mapper.PaymentRestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +38,16 @@ class PaymentControllerTest {
     private MockMvc mockMvc;
 
     @MockitoBean
-    private ManagePayment managePayment;
+    private CreatePayment createPayment;
+
+    @MockitoBean
+    private ReadPayment readPayment;
+
+    @MockitoBean
+    private ModifyPayment modifyPayment;
+
+    @MockitoBean
+    private GetAllPayments getAllPayments;
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -54,7 +66,7 @@ class PaymentControllerTest {
                 .items(List.of(new Item("T-shirt", new Money(19.99), 5)))
                 .build();
 
-        given(managePayment.createPayment(any(Payment.class))).willReturn(createdPayment);
+        given(createPayment.execute(any(Payment.class))).willReturn(createdPayment);
 
         mockMvc.perform(post("/payments")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -84,7 +96,7 @@ class PaymentControllerTest {
                 .items(List.of(new Item("T-shirt", new Money(19.99), 5)))
                 .build();
 
-        given(managePayment.modifyPayment(any(Payment.class))).willReturn(modifiedPayment);
+        given(modifyPayment.execute(any(Payment.class))).willReturn(modifiedPayment);
 
         mockMvc.perform(put("/payments/1")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -112,7 +124,7 @@ class PaymentControllerTest {
                 .items(List.of(new Item("Bike", new Money(208.00), 1), new Item("Shoes", new Money(30.00), 1)))
                 .build();
 
-        given(managePayment.getAllPayments()).willReturn(List.of(payment1, payment2));
+        given(getAllPayments.execute()).willReturn(List.of(payment1, payment2));
 
         mockMvc.perform(get("/payments").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())

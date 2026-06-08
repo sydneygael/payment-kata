@@ -4,10 +4,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.kata.payment.domain.port.in.ManagePayment;
 import org.kata.payment.configuration.CucumberSpringConfiguration;
 import org.kata.payment.domain.model.Payment;
 import org.kata.payment.domain.model.PaymentId;
+import org.kata.payment.domain.usecase.GetAllPayments;
+import org.kata.payment.domain.usecase.ReadPayment;
 import org.kata.payment.infrastructure.adapter.in.rest.dto.PaymentRequest;
 import org.kata.payment.infrastructure.adapter.in.rest.dto.PaymentResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,10 @@ public class PaymentSteps extends CucumberSpringConfiguration {
     private WebApplicationContext context;
 
     @Autowired
-    private ManagePayment managePayment;
+    private ReadPayment readPayment;
+
+    @Autowired
+    private GetAllPayments getAllPayments;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -57,7 +61,7 @@ public class PaymentSteps extends CucumberSpringConfiguration {
                 .getContentAsString();
 
         var paymentResponse = objectMapper.readValue(response, PaymentResponse.class);
-        createdPayment = managePayment.readingPayment(new PaymentId(paymentResponse.id()));
+        createdPayment = readPayment.execute(new PaymentId(paymentResponse.id()));
     }
 
     @When("I modify the transaction to status AUTHORIZED")
@@ -75,7 +79,7 @@ public class PaymentSteps extends CucumberSpringConfiguration {
                         .content(objectMapper.writeValueAsString(paymentRequest)))
                 .andExpect(status().isOk());
 
-        createdPayment = managePayment.readingPayment(createdPayment.getId());
+        createdPayment = readPayment.execute(createdPayment.getId());
     }
 
     @When("I modify the transaction to status CAPTURED")
@@ -93,7 +97,7 @@ public class PaymentSteps extends CucumberSpringConfiguration {
                         .content(objectMapper.writeValueAsString(paymentRequest)))
                 .andExpect(status().isOk());
 
-        createdPayment = managePayment.readingPayment(createdPayment.getId());
+        createdPayment = readPayment.execute(createdPayment.getId());
     }
 
     @Then("the transaction should have status {word}")
@@ -123,7 +127,7 @@ public class PaymentSteps extends CucumberSpringConfiguration {
                 .getContentAsString();
 
         var paymentResponse = objectMapper.readValue(response, PaymentResponse.class);
-        createdPayment = managePayment.readingPayment(new PaymentId(paymentResponse.id()));
+        createdPayment = readPayment.execute(new PaymentId(paymentResponse.id()));
     }
 
     @When("I modify the transaction to status CANCELED")
@@ -141,7 +145,7 @@ public class PaymentSteps extends CucumberSpringConfiguration {
                         .content(objectMapper.writeValueAsString(paymentRequest)))
                 .andExpect(status().isOk());
 
-        createdPayment = managePayment.readingPayment(createdPayment.getId());
+        createdPayment = readPayment.execute(createdPayment.getId());
     }
 
     @Given("I have created multiple transactions")
@@ -171,7 +175,7 @@ public class PaymentSteps extends CucumberSpringConfiguration {
 
     @Then("I should get all transactions")
     public void verifyAllTransactionsRetrieved() {
-        List<Payment> payments = managePayment.getAllPayments();
+        List<Payment> payments = getAllPayments.execute();
         assertThat(payments).hasSizeGreaterThanOrEqualTo(2);
     }
 }
