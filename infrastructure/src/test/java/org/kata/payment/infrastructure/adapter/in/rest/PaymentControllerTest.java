@@ -1,7 +1,9 @@
 package org.kata.payment.infrastructure.adapter.in.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.kata.payment.domain.model.Item;
 import org.kata.payment.domain.model.Money;
 import org.kata.payment.domain.model.Payment;
@@ -12,12 +14,11 @@ import org.kata.payment.domain.usecase.ModifyPayment;
 import org.kata.payment.domain.usecase.ReadPayment;
 import org.kata.payment.infrastructure.adapter.in.rest.dto.PaymentRequest;
 import org.kata.payment.infrastructure.adapter.in.rest.mapper.PaymentRestMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.context.bean.override.mockito.MockitoBean;
-import org.springframework.context.annotation.Import;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.math.BigDecimal;
 import java.util.Collections;
@@ -30,26 +31,23 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(PaymentController.class)
-@Import(PaymentRestMapper.class)
+@ExtendWith(MockitoExtension.class)
 class PaymentControllerTest {
 
-    @Autowired
     private MockMvc mockMvc;
 
-    @MockitoBean
-    private CreatePayment createPayment;
-
-    @MockitoBean
-    private ReadPayment readPayment;
-
-    @MockitoBean
-    private ModifyPayment modifyPayment;
-
-    @MockitoBean
-    private GetAllPayments getAllPayments;
+    @Mock private CreatePayment createPayment;
+    @Mock private ReadPayment readPayment;
+    @Mock private ModifyPayment modifyPayment;
+    @Mock private GetAllPayments getAllPayments;
 
     private final ObjectMapper objectMapper = new ObjectMapper();
+
+    @BeforeEach
+    void setUp() {
+        var controller = new PaymentController(createPayment, readPayment, modifyPayment, getAllPayments, new PaymentRestMapper());
+        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
+    }
 
     @Test
     void createPayment() throws Exception {

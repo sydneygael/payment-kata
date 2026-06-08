@@ -8,18 +8,20 @@ import org.kata.payment.domain.model.PaymentId;
 import org.kata.payment.infrastructure.adapter.out.persistence.mapper.PaymentPersistenceMapper;
 import org.kata.payment.infrastructure.adapter.out.persistence.repository.PaymentJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.context.annotation.Import;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@DataJpaTest(properties = {
-        "spring.datasource.url=jdbc:h2:mem:testdb",
-        "spring.jpa.hibernate.ddl-auto=create-drop"
+@SpringBootTest(properties = {
+        "spring.datasource.url=jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE",
+        "spring.jpa.hibernate.ddl-auto=create-drop",
+        "app.payment.storage.type=jpa",
+        "spring.batch.job.enabled=false"
 })
-@Import(PaymentPersistenceMapper.class)
+@Transactional
 class PaymentJpaAdapterTest {
 
     @Autowired
