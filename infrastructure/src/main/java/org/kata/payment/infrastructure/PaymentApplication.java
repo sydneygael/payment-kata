@@ -6,9 +6,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {
-        "org.kata.payment.config",
-        "org.kata.payment.domain",
-        "org.kata.payment.application",
         "org.kata.payment.infrastructure"
 })
 public class PaymentApplication {

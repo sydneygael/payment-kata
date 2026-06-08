@@ -22,13 +22,11 @@ subprojects {
         // BOM Spring Boot
         implementation(platform("org.springframework.boot:spring-boot-dependencies:4.0.0-M3"))
 
-        // Lombok pour tous
-        compileOnly("org.projectlombok:lombok")
-        annotationProcessor("org.projectlombok:lombok")
 
         // Dépendances de test communes
         testImplementation("org.junit.jupiter:junit-jupiter")
         testImplementation("org.assertj:assertj-core")
+        testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     }
 
     tasks.test {
@@ -38,7 +36,9 @@ subprojects {
 
 // --------------------- MODULE DOMAIN ---------------------
 project(":domain") {
-    // module simple, pas de dépendances supplémentaires
+    dependencies {
+        implementation("org.slf4j:slf4j-api")
+    }
 }
 
 // --------------------- MODULE APPLICATION ---------------------
@@ -72,10 +72,6 @@ project(":infrastructure") {
         implementation("org.springdoc:springdoc-openapi-starter-webmvc-api:2.5.0")
         implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
 
-        // Lombok
-        compileOnly("org.projectlombok:lombok")
-        annotationProcessor("org.projectlombok:lombok")
-
         // Test
         testImplementation("org.springframework.boot:spring-boot-starter-test")
     }
@@ -90,7 +86,11 @@ project(":infrastructure") {
 project(":validation-test") {
     dependencies {
         implementation(project(":infrastructure"))
+        testImplementation(project(":application"))
+        testImplementation(project(":domain"))
+        testImplementation("org.springframework.boot:spring-boot-starter-web")
         testImplementation("org.springframework.boot:spring-boot-starter-test")
+        testImplementation("com.fasterxml.jackson.core:jackson-databind")
         testImplementation("io.cucumber:cucumber-java:7.30.0")
         testImplementation("io.cucumber:cucumber-spring:7.30.0")
         testImplementation("io.cucumber:cucumber-junit-platform-engine:7.30.0")
@@ -110,6 +110,10 @@ project(":perf-test") {
     dependencies {
         testImplementation("io.gatling.highcharts:gatling-charts-highcharts:3.11.4")
         testImplementation("io.gatling:gatling-test-framework:3.11.4")
+    }
+
+    tasks.test {
+        failOnNoDiscoveredTests = false
     }
 
     tasks.register<JavaExec>("gatling") {

@@ -1,9 +1,7 @@
 package org.kata.payment.domain.state;
 
-import org.kata.payment.domain.aggregat.Payment;
-import lombok.extern.slf4j.Slf4j;
+import org.kata.payment.domain.model.Payment;
 
-@Slf4j
 public class CapturedState extends AbstractPaymentState {
 
     @Override

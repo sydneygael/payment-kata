@@ -1,14 +1,14 @@
 package org.kata.payment.domain;
 
 import org.junit.jupiter.api.Test;
-import org.kata.payment.domain.aggregat.Payment;
+import org.kata.payment.domain.model.Item;
+import org.kata.payment.domain.model.Money;
+import org.kata.payment.domain.model.Payment;
+import org.kata.payment.domain.model.PaymentId;
 import org.kata.payment.domain.state.AuthorizedState;
 import org.kata.payment.domain.state.CanceledState;
 import org.kata.payment.domain.state.CapturedState;
 import org.kata.payment.domain.state.NewState;
-import org.kata.payment.domain.valueobject.Item;
-import org.kata.payment.domain.valueobject.Money;
-import org.kata.payment.domain.valueobject.PaymentId;
 
 import java.util.ArrayList;
 import java.util.Collections;

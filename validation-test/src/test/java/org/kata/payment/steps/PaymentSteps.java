@@ -4,12 +4,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.kata.payment.application.ports.input.ManagePayment;
+import org.kata.payment.application.port.in.ManagePayment;
 import org.kata.payment.configuration.CucumberSpringConfiguration;
-import org.kata.payment.domain.aggregat.Payment;
-import org.kata.payment.domain.valueobject.PaymentId;
-import org.kata.payment.infrastructure.adapters.inbound.rest.dto.PaymentRequest;
-import org.kata.payment.infrastructure.adapters.inbound.rest.dto.PaymentResponse;
+import org.kata.payment.domain.model.Payment;
+import org.kata.payment.domain.model.PaymentId;
+import org.kata.payment.infrastructure.adapter.in.rest.dto.PaymentRequest;
+import org.kata.payment.infrastructure.adapter.in.rest.dto.PaymentResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -38,7 +38,7 @@ public class PaymentSteps extends CucumberSpringConfiguration {
     private MockMvc mockMvc;
     private Payment createdPayment;
 
-    @Given("I create a transaction with payment type {word} for {int} T-shirts costing {double} Euros each")
+    @Given("I create a transaction with payment type {word} for {int} T-shirts costing {bigdecimal} Euros each")
     public void createTransaction(String paymentType, int quantity, BigDecimal price) throws Exception {
         mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
 
@@ -62,10 +62,9 @@ public class PaymentSteps extends CucumberSpringConfiguration {
 
     @When("I modify the transaction to status AUTHORIZED")
     public void modifyTransactionToAuthorized() throws Exception {
-        createdPayment.setStatus(Payment.PaymentStatus.AUTHORIZED);
         var paymentRequest = new PaymentRequest(
                 createdPayment.getPaymentType(),
-                createdPayment.getStatus(),
+                Payment.PaymentStatus.AUTHORIZED,
                 createdPayment.getItems().stream()
                         .map(item -> new PaymentRequest.ItemRequest(item.name(), item.price().amount(), item.quantity()))
                         .toList()
@@ -81,10 +80,9 @@ public class PaymentSteps extends CucumberSpringConfiguration {
 
     @When("I modify the transaction to status CAPTURED")
     public void modifyTransactionToCaptured() throws Exception {
-        createdPayment.setStatus(Payment.PaymentStatus.CAPTURED);
         var paymentRequest = new PaymentRequest(
                 createdPayment.getPaymentType(),
-                createdPayment.getStatus(),
+                Payment.PaymentStatus.CAPTURED,
                 createdPayment.getItems().stream()
                         .map(item -> new PaymentRequest.ItemRequest(item.name(), item.price().amount(), item.quantity()))
                         .toList()
@@ -103,7 +101,7 @@ public class PaymentSteps extends CucumberSpringConfiguration {
         assertThat(createdPayment.getStatus()).isEqualTo(Payment.PaymentStatus.valueOf(status));
     }
 
-    @Given("I create a transaction with payment type PAYPAL for {int} bike costing {double} Euros and {int} pair of shoes costing {double} Euros")
+    @Given("I create a transaction with payment type PAYPAL for {int} bike costing {bigdecimal} Euros and {int} pair of shoes costing {bigdecimal} Euros")
     public void createPaypalTransaction(int bikeQuantity, BigDecimal bikePrice, int shoesQuantity, BigDecimal shoesPrice) throws Exception {
         mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
 
@@ -130,10 +128,9 @@ public class PaymentSteps extends CucumberSpringConfiguration {
 
     @When("I modify the transaction to status CANCELED")
     public void modifyTransactionToCanceled() throws Exception {
-        createdPayment.setStatus(Payment.PaymentStatus.CANCELED);
-        PaymentRequest paymentRequest = new PaymentRequest(
+        var paymentRequest = new PaymentRequest(
                 createdPayment.getPaymentType(),
-                createdPayment.getStatus(),
+                Payment.PaymentStatus.CANCELED,
                 createdPayment.getItems().stream()
                         .map(item -> new PaymentRequest.ItemRequest(item.name(), item.price().amount(), item.quantity()))
                         .toList()
